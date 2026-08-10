@@ -2,6 +2,7 @@ import { HeroSection } from '@/components/home/HeroSection';
 import { PromoBanners } from '@/components/home/PromoBanners';
 import { CollectionStories } from '@/components/home/CollectionStories';
 import { AsymmetricEditorialGrid } from '@/components/home/AsymmetricEditorialGrid';
+import { StyleLookbookGrid } from '@/components/home/StyleLookbookGrid';
 import { TrendingCarousel } from '@/components/home/TrendingCarousel';
 import { NewsletterSection } from '@/components/home/NewsletterSection';
 
@@ -20,10 +21,13 @@ export default function HomePage() {
       {/* 4. Uneven Editorial / Product Section (Asymmetric Grid) */}
       <AsymmetricEditorialGrid />
 
-      {/* 5. Horizontally Auto-Scrolling Trending / Top Rated Carousel */}
+      {/* 5. Style Archive & Lookbook Gallery (30+ High-Fashion Options) */}
+      <StyleLookbookGrid />
+
+      {/* 6. Horizontally Auto-Scrolling Trending / Top Rated Carousel */}
       <TrendingCarousel />
 
-      {/* 6. VIP Drop Newsletter Section */}
+      {/* 7. VIP Drop Newsletter Section */}
       <NewsletterSection />
     </div>
   );

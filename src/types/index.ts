@@ -36,6 +36,8 @@ export interface Product {
   isNewArrival?: boolean;
   placeholderGradient?: string;
   imageUrl?: string;
+  hoverImageUrl?: string;
+  images?: string[];
 }
 
 export interface Collection {

@@ -41,7 +41,13 @@ export const mockProducts: Product[] = [
       'Cool iron inside-out; avoid direct contact with printed metadata'
     ],
     placeholderGradient: 'linear-gradient(135deg, #1B1F22 0%, #123A3F 60%, #090A0B 100%)',
-    imageUrl: '/images/product-acid-tee.png'
+    imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-002',
@@ -82,7 +88,12 @@ export const mockProducts: Product[] = [
       'Do not bleach or dry clean'
     ],
     placeholderGradient: 'linear-gradient(135deg, #090A0B 0%, #182A3A 50%, #121416 100%)',
-    imageUrl: '/images/product-parachute-pants.png'
+    imageUrl: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-003',
@@ -119,7 +130,12 @@ export const mockProducts: Product[] = [
     ],
     careInstructions: ['Dry clean recommended', 'Hand wash cold separately', 'Do not wring'],
     placeholderGradient: 'linear-gradient(135deg, #682C21 0%, #090A0B 60%, #C65A28 100%)',
-    imageUrl: '/images/editorial-sculpt.png'
+    imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-004',
@@ -159,7 +175,12 @@ export const mockProducts: Product[] = [
       'Hang dry only'
     ],
     placeholderGradient: 'linear-gradient(135deg, #182A3A 0%, #090A0B 70%, #123A3F 100%)',
-    imageUrl: '/images/product-denim-jacket.png'
+    imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-005',
@@ -195,7 +216,12 @@ export const mockProducts: Product[] = [
     ],
     careInstructions: ['Professional dry clean only'],
     placeholderGradient: 'linear-gradient(135deg, #682C21 0%, #121416 50%, #C65A28 100%)',
-    imageUrl: '/images/editorial-uniform.png'
+    imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1548883354-7622d03aca27?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-006',
@@ -231,7 +257,12 @@ export const mockProducts: Product[] = [
     ],
     careInstructions: ['Machine wash cold', 'Lay flat to dry', 'Do not tumble dry'],
     placeholderGradient: 'linear-gradient(135deg, #123A3F 0%, #1B1F22 50%, #090A0B 100%)',
-    imageUrl: '/images/editorial-street.png'
+    imageUrl: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-007',
@@ -267,7 +298,12 @@ export const mockProducts: Product[] = [
     ],
     careInstructions: ['Hand wash cold only in wool detergent', 'Dry flat on a towel', 'Store folded; never on a hanger'],
     placeholderGradient: 'linear-gradient(135deg, #C65A28 0%, #682C21 50%, #090A0B 100%)',
-    imageUrl: '/images/editorial-knitwear.png'
+    imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-008',
@@ -289,130 +325,152 @@ export const mockProducts: Product[] = [
     outfitCategory: 'STREET FIT',
     isTrending: true,
     colors: [
-      { name: 'Charcoal Wash', hex: '#121416' },
-      { name: 'Dark Teal Smoke', hex: '#123A3F' },
-      { name: 'Muted Ochre', hex: '#C59A3A' },
+      { name: 'Pitch Black', hex: '#090A0B' },
+      { name: 'Washed Olive', hex: '#182A3A' },
+      { name: 'Cement Grey', hex: '#686C72' },
     ],
-    sizes: ['XS', 'S', 'M', 'L', 'XL'],
-    description: 'Volume-forward balloon trousers featuring knee pleat expansion vents, an internal drawcord elastic waistband, and an ultra-lightweight airy drape.',
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'An architectural balloon pant with deep forward pleating, knee articulation darts, and dual-adjuster bungee ankle cuffs to transition from voluminous puddle to tapered silhouette.',
     details: [
-      'Deep front tuck pleats creating 3D architectural volume',
-      'Hem drawcords to convert between balloon shape and wide straight cut',
-      'Concealed zippered coin pocket within right slash pocket',
-      'Water and stain resistant treatment'
+      'Dramatic sculptural balloon silhouette',
+      'Ultra-lightweight crinkle poplin with matte finish',
+      'Hidden zippered stash pocket in side seam',
+      'Elastic waist with integrated nylon webbing belt'
     ],
-    careInstructions: ['Machine wash cold', 'Tumble dry low', 'Iron on low setting'],
-    placeholderGradient: 'linear-gradient(135deg, #121416 0%, #123A3F 60%, #182A3A 100%)'
+    careInstructions: ['Machine wash cold gentle cycle', 'Hang to dry in shade', 'Warm iron if desired'],
+    placeholderGradient: 'linear-gradient(135deg, #090A0B 0%, #123A3F 60%, #182A3A 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-009',
-    name: 'HEAVYWEIGHT DOUBLE-ZIP HOODIE',
-    slug: 'heavyweight-double-zip-hoodie',
+    name: 'HEAVYWEIGHT FRENCH TERRY HOODIE',
+    slug: 'heavyweight-french-terry-hoodie',
     category: 'Hoodies',
-    subCategory: 'Zip-Up Hoodies',
+    subCategory: 'Oversized Hoodies',
+    gender: 'unisex',
+    price: 3299,
+    compareAtPrice: 4299,
+    discountPercent: 23,
+    rating: 4.93,
+    reviewCount: 156,
+    fit: 'Boxy',
+    material: '450 GSM Heavy Combed Loopback Cotton',
+    composition: '100% Organic Ring-Spun Cotton',
+    collection: 'Streetwear',
+    badge: 'BEST SELLER',
+    outfitCategory: 'OVERSIZED FIT',
+    isTrending: true,
+    isTopRated: true,
+    colors: [
+      { name: 'Washed Stone', hex: '#EAEAE4' },
+      { name: 'Obsidian Black', hex: '#111315' },
+      { name: 'Dark Cedar', hex: '#682C21' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description: 'A structural double-layered crossover hood hoodie engineered from custom 450 GSM dense loopback fleece. Built to drape naturally without sagging.',
+    details: [
+      'Double-layer heavyweight hood without drawstrings for clean aesthetic',
+      'Blind kangaroo pocket with reinforced bartacks',
+      'Thick 2x2 ribbed side expansion gussets',
+      'Custom garment dye with subtle enzyme wash'
+    ],
+    careInstructions: ['Machine wash cold inside out', 'Do not tumble dry', 'Hang dry in shade'],
+    placeholderGradient: 'linear-gradient(135deg, #111315 0%, #1B1F22 60%, #EAEAE4 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-010',
+    name: 'OVERSIZED TAILORED BLAZER',
+    slug: 'oversized-tailored-blazer',
+    category: 'Blazers',
+    subCategory: 'Tailoring',
+    gender: 'unisex',
+    price: 4999,
+    compareAtPrice: 6999,
+    discountPercent: 28,
+    rating: 4.89,
+    reviewCount: 54,
+    fit: 'Oversized',
+    material: 'Tropical Wool & Viscose Twill',
+    composition: '55% Polyester, 40% Viscose, 5% Elastane',
+    collection: 'Outerwear',
+    badge: 'NEW DROP',
+    outfitCategory: 'MINIMAL FIT',
+    isNewArrival: true,
+    colors: [
+      { name: 'Charcoal Pinstripe', hex: '#1B1F22' },
+      { name: 'Raw Bone', hex: '#F0EDE6' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'A relaxed double-breasted silhouette with sharp padded shoulders, wide peak lapels, and clean functional horn buttons.',
+    details: [
+      'Structured internal shoulder pad construction',
+      'Double-breasted four-button closure',
+      'Full cupro jacquard lining',
+      'Dual interior welt pockets and rear vent'
+    ],
+    careInstructions: ['Professional dry clean only'],
+    placeholderGradient: 'linear-gradient(135deg, #1B1F22 0%, #F0EDE6 50%, #111315 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-011',
+    name: 'PLEATED WIDE-LEG TROUSER',
+    slug: 'pleated-wide-leg-trouser',
+    category: 'Pants',
+    subCategory: 'Trousers',
     gender: 'unisex',
     price: 2999,
     compareAtPrice: 3999,
     discountPercent: 25,
-    rating: 4.93,
-    reviewCount: 204,
-    fit: 'Boxy',
-    material: '450 GSM French Terry Fleece',
-    composition: '100% Combed Cotton Face with Loopback Interior',
+    rating: 4.88,
+    reviewCount: 92,
+    fit: 'Wide-Leg',
+    material: 'Fluid Heavy Gabardine',
+    composition: '65% Polyester, 35% Rayon',
     collection: 'Essentials',
-    badge: 'BEST SELLER',
-    outfitCategory: 'EVERYDAY FIT',
-    isTrending: true,
-    isTopRated: true,
+    badge: 'STAFF PICK',
+    outfitCategory: 'MINIMAL FIT',
     colors: [
-      { name: 'Obsidian Black', hex: '#090A0B' },
-      { name: 'Deep Rust', hex: '#682C21' },
-      { name: 'Heather Graphite', hex: '#1B1F22' },
-    ],
-    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
-    description: 'Built like an armored luxury layer. Cut in a wide-bodied, cropped silhouette with double two-way matte steel zippers and a seamless double-layer hood.',
-    details: [
-      '450 GSM ultra-heavyweight cotton that holds its architectural shape',
-      'Two-way YKK custom metal zipper for versatile styling',
-      'Deep kangaroo pocket with concealed internal phone sleeve',
-      'Wide ribbed cuffs and hem with high elastic retention'
-    ],
-    careInstructions: ['Wash inside out in cold water', 'Hang dry in shade', 'Do not tumble dry to preserve shape'],
-    placeholderGradient: 'linear-gradient(135deg, #1B1F22 0%, #090A0B 60%, #682C21 100%)'
-  },
-  {
-    id: 'prod-010',
-    name: 'PLEATED LOW-RISE MINI SKIRT',
-    slug: 'pleated-low-rise-mini-skirt',
-    category: 'Skirts',
-    subCategory: 'Mini Skirts',
-    gender: 'women',
-    price: 1699,
-    compareAtPrice: 2299,
-    discountPercent: 26,
-    rating: 4.76,
-    reviewCount: 59,
-    fit: 'Regular',
-    material: 'Heavy Suiting Twill',
-    composition: '70% Polyester, 26% Rayon, 4% Spandex with Inner Safety Shorts',
-    collection: 'Limited Drop',
-    badge: 'NEW DROP',
-    outfitCategory: 'DATE NIGHT',
-    isNewArrival: true,
-    colors: [
-      { name: 'Jet Black', hex: '#090A0B' },
-      { name: 'Deep Rust Plaid', hex: '#682C21' },
-      { name: 'Charcoal Pinstripe', hex: '#121416' },
-    ],
-    sizes: ['XS', 'S', 'M', 'L'],
-    description: 'Sharp knife-pleated skirt engineered with a built-in stretch shorts underlayer for seamless confidence during daily movement.',
-    details: [
-      'Integrated soft stretch modal safety shorts',
-      'Side invisible zip closure with hook-and-eye fastener',
-      'Permanent heat-set pleating that retains crisp lines through washes',
-      'Subtle metallic VOSTRA logo plaque at hip'
-    ],
-    careInstructions: ['Hand wash or delicate machine cycle', 'Hang to drip dry to keep pleats sharp', 'Steam gently'],
-    placeholderGradient: 'linear-gradient(135deg, #682C21 0%, #090A0B 50%, #123A3F 100%)'
-  },
-  {
-    id: 'prod-011',
-    name: 'OVERSIZED DENIM TRUCKER JACKET',
-    slug: 'oversized-denim-trucker-jacket',
-    category: 'Jackets',
-    subCategory: 'Denim Jackets',
-    gender: 'unisex',
-    price: 3799,
-    compareAtPrice: 4999,
-    discountPercent: 24,
-    rating: 4.9,
-    reviewCount: 88,
-    fit: 'Oversized',
-    material: '13.75oz Washed Bull Denim',
-    composition: '100% Sustainable Cotton',
-    collection: 'Denim',
-    badge: 'HOT',
-    outfitCategory: 'DENIM EDIT',
-    isTrending: true,
-    colors: [
-      { name: 'Vintage Acid Black', hex: '#121416' },
-      { name: 'Deep Indigo Tint', hex: '#182A3A' },
+      { name: 'Obsidian Black', hex: '#111315' },
+      { name: 'Warm Taupe', hex: '#B8BAB5' },
     ],
     sizes: ['S', 'M', 'L', 'XL'],
-    description: 'Classic American trucker silhouette amplified with dramatic drop-shoulders, vintage hand-scraped fades, and heavy matte shank hardware.',
+    description: 'Double reverse-pleat trousers with high-rise waistband, deep slash pockets, and an unbroken floor-grazing drape.',
     details: [
-      'Twin chest flap pockets with concealed side-entry welt hand pockets',
-      'Buttoned waist tab adjusters for customized crop styling',
-      'Heavy double-needle felled seams throughout',
-      'Pre-washed for instant comfortable drape'
+      'Double front forward pleats for relaxed volume',
+      'Extended tab waistband with concealed hook-and-bar closure',
+      'Rear jetted pockets with natural horn button',
+      'Half-lined front leg for friction-free movement'
     ],
-    careInstructions: ['Machine wash cold inside out', 'Hang to dry', 'Wash with similar dark denim'],
-    placeholderGradient: 'linear-gradient(135deg, #182A3A 0%, #1B1F22 60%, #090A0B 100%)'
+    careInstructions: ['Dry clean or machine wash cold on delicate cycle', 'Hang dry'],
+    placeholderGradient: 'linear-gradient(135deg, #111315 0%, #B8BAB5 50%, #1B1F22 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-012',
-    name: 'GRAPHIC MOTIF HEAVYWEIGHT TEE',
-    slug: 'graphic-motif-heavyweight-tee',
+    name: 'GRAPHIC HEAVYWEIGHT PUFF TEE',
+    slug: 'graphic-heavyweight-puff-tee',
     category: 'T-Shirts',
     subCategory: 'Graphic Tees',
     gender: 'unisex',
@@ -443,7 +501,13 @@ export const mockProducts: Product[] = [
       'Silicone-washed for an ultra-soft premium handfeel'
     ],
     careInstructions: ['Wash inside-out in cold water', 'Do not iron directly over the puff graphic', 'Hang dry'],
-    placeholderGradient: 'linear-gradient(135deg, #C59A3A 0%, #682C21 50%, #090A0B 100%)'
+    placeholderGradient: 'linear-gradient(135deg, #C59A3A 0%, #682C21 50%, #090A0B 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-013',
@@ -478,25 +542,31 @@ export const mockProducts: Product[] = [
       'Breathable 3D spacer mesh back panel for all-day comfort'
     ],
     careInstructions: ['Wipe clean with a damp microfiber cloth', 'Do not machine wash or soak'],
-    placeholderGradient: 'linear-gradient(135deg, #123A3F 0%, #090A0B 60%, #182A3A 100%)'
+    placeholderGradient: 'linear-gradient(135deg, #123A3F 0%, #090A0B 60%, #682C21 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-014',
-    name: 'STRUCTURED KNIT POLO SHIRT',
-    slug: 'structured-knit-polo-shirt',
-    category: 'Shirts',
-    subCategory: 'Polo Shirts',
+    name: 'TEXTURED WAFFLE RESORT POLO',
+    slug: 'textured-waffle-resort-polo',
+    category: 'Knitwear',
+    subCategory: 'Polos',
     gender: 'men',
     price: 2199,
-    compareAtPrice: 2999,
-    discountPercent: 27,
+    compareAtPrice: 2899,
+    discountPercent: 24,
     rating: 4.82,
-    reviewCount: 68,
+    reviewCount: 79,
     fit: 'Relaxed',
-    material: 'Jacquard Textured Knit Cotton',
-    composition: '100% Mercerized Pima Cotton',
-    collection: 'Monochrome',
-    badge: 'BEST SELLER',
+    material: 'Mercerized Cotton Waffle',
+    composition: '100% Long-Staple Combed Cotton',
+    collection: 'Essentials',
+    badge: 'NEW DROP',
     outfitCategory: 'MINIMAL FIT',
     colors: [
       { name: 'Deep Graphite', hex: '#1B1F22' },
@@ -512,7 +582,13 @@ export const mockProducts: Product[] = [
       'Breathable open-gauge stitch construction'
     ],
     careInstructions: ['Delicate cold wash', 'Reshape while damp and dry flat', 'Store folded'],
-    placeholderGradient: 'linear-gradient(135deg, #1B1F22 0%, #182A3A 50%, #090A0B 100%)'
+    placeholderGradient: 'linear-gradient(135deg, #1B1F22 0%, #182A3A 50%, #090A0B 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1625910513413-5b8d0037a347?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1625910513413-5b8d0037a347?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-015',
@@ -547,7 +623,13 @@ export const mockProducts: Product[] = [
       'Discreet blind-stitched hemline'
     ],
     careInstructions: ['Hand wash cold or dry clean', 'Lay flat to dry', 'Cool iron with pressing cloth'],
-    placeholderGradient: 'linear-gradient(135deg, #C65A28 0%, #123A3F 60%, #090A0B 100%)'
+    placeholderGradient: 'linear-gradient(135deg, #C65A28 0%, #123A3F 60%, #090A0B 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    ]
   },
   {
     id: 'prod-016',
@@ -582,7 +664,335 @@ export const mockProducts: Product[] = [
       'Reinforced TPU heel stabilizer clip'
     ],
     careInstructions: ['Clean with premium leather foam cleaner', 'Protect with water-repellent spray'],
-    placeholderGradient: 'linear-gradient(135deg, #090A0B 0%, #1B1F22 50%, #C59A3A 100%)'
+    placeholderGradient: 'linear-gradient(135deg, #090A0B 0%, #1B1F22 50%, #C59A3A 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-017',
+    name: 'OVERSIZED WASHED LEATHER MOTO JACKET',
+    slug: 'oversized-washed-leather-moto-jacket',
+    category: 'Jackets',
+    subCategory: 'Leather Jackets',
+    gender: 'unisex',
+    price: 7999,
+    compareAtPrice: 10999,
+    discountPercent: 27,
+    rating: 4.97,
+    reviewCount: 42,
+    fit: 'Oversized',
+    material: 'Hand-Distressed Lambskin Leather',
+    composition: '100% Genuine Lambskin with Heavy Satin Lining',
+    collection: 'Outerwear',
+    badge: 'LIMITED DROP',
+    outfitCategory: 'NIGHT OUT',
+    isNewArrival: true,
+    isTrending: true,
+    colors: [
+      { name: 'Vintage Washed Black', hex: '#111315' },
+      { name: 'Cognac Rust', hex: '#682C21' },
+    ],
+    sizes: ['M', 'L', 'XL'],
+    description: 'A heavyweight luxury biker jacket with dropped shoulders, asymmetric matte silver zippers, action back shoulder gussets, and vintage hand-buffed seam wear.',
+    details: [
+      'Supple 1.2mm premium vegetable-tanned lambskin',
+      'Chunky #10 YKK industrial zippers',
+      'Integrated belt with custom engraved buckle',
+      'Quilted satin interior thermal lining'
+    ],
+    careInstructions: ['Specialist leather dry cleaning only'],
+    placeholderGradient: 'linear-gradient(135deg, #111315 0%, #682C21 60%, #1B1F22 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-018',
+    name: 'ARCHITECTURAL LAYERED MESH TEE',
+    slug: 'architectural-layered-mesh-tee',
+    category: 'T-Shirts',
+    subCategory: 'Layered Tops',
+    gender: 'women',
+    price: 1399,
+    compareAtPrice: 1999,
+    discountPercent: 30,
+    rating: 4.83,
+    reviewCount: 68,
+    fit: 'Slim',
+    material: 'Double-Layer Micro Power Mesh',
+    composition: '90% Polyamide, 10% Elastane',
+    collection: 'Limited Drop',
+    badge: 'NEW DROP',
+    outfitCategory: 'NIGHT OUT',
+    isNewArrival: true,
+    colors: [
+      { name: 'Smoky Slate', hex: '#182A3A' },
+      { name: 'Deep Rust', hex: '#682C21' },
+      { name: 'Bone White', hex: '#F0EDE6' },
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'A semi-sheer double-layered long sleeve mesh top with engineered gradient dyeing, exposed overlock marrow stitching, and elongated thumbhole cuffs.',
+    details: [
+      'Second-skin sculpting stretch fit',
+      'Engineered ombré wash inspired by Tokyo night horizons',
+      'Thumbhole cuffs that sit securely over wrists',
+      'Raw laser-cut hemline'
+    ],
+    careInstructions: ['Hand wash cold in mesh bag', 'Hang dry in shade'],
+    placeholderGradient: 'linear-gradient(135deg, #182A3A 0%, #682C21 50%, #F0EDE6 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-019',
+    name: 'VINTAGE CARPENTER SELVEDGE DENIM',
+    slug: 'vintage-carpenter-selvedge-denim',
+    category: 'Jeans',
+    subCategory: 'Carpenter Jeans',
+    gender: 'men',
+    price: 3699,
+    compareAtPrice: 4799,
+    discountPercent: 23,
+    rating: 4.92,
+    reviewCount: 114,
+    fit: 'Straight',
+    material: '13.8oz Japanese Cotton Selvedge',
+    composition: '100% Selvedge Cotton',
+    collection: 'Denim',
+    badge: 'COMMUNITY PICK',
+    outfitCategory: 'STREET FIT',
+    isTrending: true,
+    colors: [
+      { name: 'Vintage Stone Wash', hex: '#686C72' },
+      { name: 'Deep Indigo', hex: '#182A3A' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL'],
+    description: 'Utility carpenter pants with hammer loop, reinforced double knee panels, selvedge coin pocket detail, and custom antique copper rivets.',
+    details: [
+      'Double knee reinforcement panels with triple-needle chain stitching',
+      'Utility tool pocket and hammer loop on left leg',
+      'Button fly with custom branded copper shanks',
+      'Selvedge ID turned out along the outseam'
+    ],
+    careInstructions: ['Wash cold inside out', 'Hang dry'],
+    placeholderGradient: 'linear-gradient(135deg, #686C72 0%, #182A3A 60%, #111315 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-020',
+    name: 'MINIMALIST DOUBLE-FACED WOOL COAT',
+    slug: 'minimalist-double-faced-wool-coat',
+    category: 'Outerwear',
+    subCategory: 'Coats',
+    gender: 'unisex',
+    price: 8499,
+    compareAtPrice: 11999,
+    discountPercent: 29,
+    rating: 4.98,
+    reviewCount: 38,
+    fit: 'Oversized',
+    material: 'Double-Faced Merino Wool',
+    composition: '90% Fine Merino Wool, 10% Cashmere',
+    collection: 'Outerwear',
+    badge: 'HOT',
+    outfitCategory: 'MINIMAL FIT',
+    isNewArrival: true,
+    colors: [
+      { name: 'Oatmeal Bone', hex: '#F0EDE6' },
+      { name: 'Charcoal Black', hex: '#111315' },
+    ],
+    sizes: ['M', 'L', 'XL'],
+    description: 'An architectural longline overcoat hand-stitched from ultra-warm double-faced merino wool. Features a clean concealed placket and deep welt pockets.',
+    details: [
+      'Hand-finished split seam construction',
+      'Concealed horn button front placket',
+      'Deep interior document pocket',
+      'Back vent for fluid movement'
+    ],
+    careInstructions: ['Dry clean only'],
+    placeholderGradient: 'linear-gradient(135deg, #F0EDE6 0%, #111315 50%, #1B1F22 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1544923246-77307dd654cb?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-021',
+    name: 'SCULPTED KNIT CROPPED CARDIGAN',
+    slug: 'sculpted-knit-cropped-cardigan',
+    category: 'Knitwear',
+    subCategory: 'Cardigans',
+    gender: 'women',
+    price: 2399,
+    compareAtPrice: 3199,
+    discountPercent: 25,
+    rating: 4.86,
+    reviewCount: 75,
+    fit: 'Slim',
+    material: 'Ribbed Cotton-Silk Yarn',
+    composition: '70% Organic Cotton, 20% Silk, 10% Spandex',
+    collection: 'Essentials',
+    badge: 'STAFF PICK',
+    outfitCategory: 'CAMPUS FIT',
+    colors: [
+      { name: 'Alabaster White', hex: '#F7F7F5' },
+      { name: 'Burnt Ochre', hex: '#C65A28' },
+      { name: 'Midnight Onyx', hex: '#111315' },
+    ],
+    sizes: ['XS', 'S', 'M', 'L'],
+    description: 'A structural cropped cardigan featuring two-way zip closure, exaggerated sleeve flares, and an angular scoop neckline that contours the collarbones.',
+    details: [
+      'Two-way matte gunmetal zipper for customizable styling',
+      'Elongated flared sleeves that stack over wrists',
+      'Wide architectural rib gauge for body sculpting',
+      'Breathable organic cotton and silk blend'
+    ],
+    careInstructions: ['Hand wash cold with delicate detergent', 'Lay flat to dry'],
+    placeholderGradient: 'linear-gradient(135deg, #F7F7F5 0%, #C65A28 60%, #111315 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1485968579580-b6d095142e6e?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-022',
+    name: 'TECHNICAL MODULAR UTILITY VEST',
+    slug: 'technical-modular-utility-vest',
+    category: 'Outerwear',
+    subCategory: 'Vests',
+    gender: 'unisex',
+    price: 2599,
+    compareAtPrice: 3499,
+    discountPercent: 26,
+    rating: 4.89,
+    reviewCount: 51,
+    fit: 'Relaxed',
+    material: 'Cordura 330D Ripstop',
+    composition: '100% Cordura Ripstop Nylon with Mesh Lining',
+    collection: 'Streetwear',
+    badge: 'NEW DROP',
+    outfitCategory: 'STREET FIT',
+    isTrending: true,
+    colors: [
+      { name: 'Stealth Black', hex: '#111315' },
+      { name: 'Muted Olive', hex: '#123A3F' },
+    ],
+    sizes: ['M', 'L', 'XL'],
+    description: 'An architectural modular utility vest with 6 3D bellows pockets, D-ring gear attachment points, and side webbing buckle adjusters.',
+    details: [
+      'Six multi-dimensional modular utility pockets',
+      'Industrial Fidlock magnetic front closure',
+      'Breathable spacer mesh back panel',
+      'Adjustable side webbing straps for layering over hoodies or tees'
+    ],
+    careInstructions: ['Wipe clean or gentle machine wash cold'],
+    placeholderGradient: 'linear-gradient(135deg, #111315 0%, #123A3F 60%, #1B1F22 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1508427953056-b00b8d78ebf5?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-023',
+    name: 'STRUCTURED LEATHER STUDIO TOTE',
+    slug: 'structured-leather-studio-tote',
+    category: 'Accessories',
+    subCategory: 'Bags',
+    gender: 'unisex',
+    price: 3499,
+    compareAtPrice: 4799,
+    discountPercent: 27,
+    rating: 4.95,
+    reviewCount: 88,
+    fit: 'Regular',
+    material: 'Vegetable-Tanned Cowhide',
+    composition: '100% Genuine Full-Grain Leather with Suede Interior',
+    collection: 'Accessories',
+    badge: 'COMMUNITY PICK',
+    outfitCategory: 'MINIMAL FIT',
+    colors: [
+      { name: 'Obsidian Black', hex: '#111315' },
+      { name: 'Warm Cognac', hex: '#682C21' },
+    ],
+    sizes: ['M'],
+    description: 'A minimalist architectural tote bag crafted from thick vegetable-tanned leather that patinas beautifully with use. Fits up to a 16" laptop.',
+    details: [
+      'Reinforced rolled leather shoulder handles',
+      'Internal zippered security pocket and key leash',
+      'Magnetic top snap closure',
+      'Protective metal base feet'
+    ],
+    careInstructions: ['Treat periodically with natural leather conditioner'],
+    placeholderGradient: 'linear-gradient(135deg, #111315 0%, #682C21 50%, #B8BAB5 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-024',
+    name: 'CHUNKY RIBBED CASHMERE BEANIE',
+    slug: 'chunky-ribbed-cashmere-beanie',
+    category: 'Accessories',
+    subCategory: 'Headwear',
+    gender: 'unisex',
+    price: 1199,
+    compareAtPrice: 1699,
+    discountPercent: 29,
+    rating: 4.87,
+    reviewCount: 160,
+    fit: 'Regular',
+    material: 'Cashmere & Extrafine Merino',
+    composition: '50% Cashmere, 50% Extrafine Merino Wool',
+    collection: 'Accessories',
+    badge: 'BEST SELLER',
+    outfitCategory: 'WINTER LAYERS',
+    isTrending: true,
+    colors: [
+      { name: 'Charcoal Slate', hex: '#1B1F22' },
+      { name: 'Bone White', hex: '#F0EDE6' },
+      { name: 'Burnt Ochre', hex: '#C65A28' },
+    ],
+    sizes: ['M'],
+    description: 'A cozy 7-gauge fisherman ribbed beanie knit from a cloud-soft cashmere-merino blend. Features an adjustable folded cuff with tonal micro-woven label.',
+    details: [
+      '7-gauge heavy ribbed fisherman knit structure',
+      'Ultra-soft zero-itch cashmere blend',
+      'Seamless crown construction for clean silhouette',
+      'Tonal woven VOSTRA emblem'
+    ],
+    careInstructions: ['Hand wash cold only in wool wash', 'Dry flat'],
+    placeholderGradient: 'linear-gradient(135deg, #1B1F22 0%, #F0EDE6 50%, #C65A28 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=800',
+    hoverImageUrl: 'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=800',
+    images: [
+      'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=800',
+      'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=800',
+    ]
   }
 ];
 
@@ -593,6 +1003,7 @@ export const heroCampaign = {
   ctaPrimary: { label: 'SHOP MEN', href: '/men' },
   ctaSecondary: { label: 'SHOP WOMEN', href: '/women' },
   badge: 'AUTUMN / WINTER 2026 DROP 01',
+  imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1600',
   mediaPlaceholder: {
     label: 'CAMPAIGN VIDEO / 16:9 CINEMATIC LOOKBOOK',
     aspectRatio: '16/9',
@@ -609,6 +1020,7 @@ export const promotionalBanners = [
     subtitle: 'SELECTED CO-ORDS, KNITS & STREETWEAR',
     ctaText: 'EXPLORE SALE',
     ctaHref: '/shop?sale=true',
+    imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=1000',
     gradient: 'linear-gradient(135deg, #682C21 0%, #121416 65%, #090A0B 100%)',
     accent: '#C65A28',
     borderColor: 'rgba(198, 90, 40, 0.35)'
@@ -620,6 +1032,7 @@ export const promotionalBanners = [
     subtitle: 'ON ALL ORDERS ABOVE ₹999 + COMPLIMENTARY 7-DAY RETURNS',
     ctaText: 'SHOP NEW DROPS',
     ctaHref: '/new-arrivals',
+    imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=1000',
     gradient: 'linear-gradient(135deg, #123A3F 0%, #182A3A 60%, #090A0B 100%)',
     accent: '#1ECAD3',
     borderColor: 'rgba(30, 202, 211, 0.35)'
@@ -627,15 +1040,15 @@ export const promotionalBanners = [
 ];
 
 export const collectionStoryCircles = [
-  { id: 'cat-new', name: 'NEW DROPS', href: '/new-arrivals', badge: 'HOT', gradient: 'linear-gradient(135deg, #C65A28, #121416)', imageUrl: '/images/hero-campaign.png' },
-  { id: 'cat-men', name: 'MEN', href: '/men', badge: 'DROPS', gradient: 'linear-gradient(135deg, #182A3A, #090A0B)', imageUrl: '/images/editorial-street.png' },
-  { id: 'cat-women', name: 'WOMEN', href: '/women', badge: 'NEW', gradient: 'linear-gradient(135deg, #682C21, #123A3F)', imageUrl: '/images/editorial-sculpt.png' },
-  { id: 'cat-streetwear', name: 'STREETWEAR', href: '/collections/streetwear', badge: 'POPULAR', gradient: 'linear-gradient(135deg, #1B1F22, #123A3F)', imageUrl: '/images/product-acid-tee.png' },
-  { id: 'cat-essentials', name: 'ESSENTIALS', href: '/collections/essentials', gradient: 'linear-gradient(135deg, #121416, #1B1F22)', imageUrl: '/images/editorial-knitwear.png' },
-  { id: 'cat-denim', name: 'DENIM', href: '/collections/denim', badge: 'SELVEDGE', gradient: 'linear-gradient(135deg, #182A3A, #123A3F)', imageUrl: '/images/editorial-denim.png' },
-  { id: 'cat-outerwear', name: 'OUTERWEAR', href: '/collections/outerwear', gradient: 'linear-gradient(135deg, #682C21, #090A0B)', imageUrl: '/images/editorial-uniform.png' },
-  { id: 'cat-accessories', name: 'ACCESSORIES', href: '/shop?category=Accessories', gradient: 'linear-gradient(135deg, #C59A3A, #121416)', imageUrl: '/images/product-parachute-pants.png' },
-  { id: 'cat-sale', name: 'ARCHIVE SALE', href: '/shop?sale=true', badge: '-40%', gradient: 'linear-gradient(135deg, #C65A28, #682C21)', imageUrl: '/images/product-denim-jacket.png' },
+  { id: 'cat-new', name: 'NEW DROPS', href: '/new-arrivals', badge: 'HOT', gradient: 'linear-gradient(135deg, #C65A28, #121416)', imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-men', name: 'MEN', href: '/men', badge: 'DROPS', gradient: 'linear-gradient(135deg, #182A3A, #090A0B)', imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-women', name: 'WOMEN', href: '/women', badge: 'NEW', gradient: 'linear-gradient(135deg, #682C21, #123A3F)', imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-streetwear', name: 'STREETWEAR', href: '/collections/streetwear', badge: 'POPULAR', gradient: 'linear-gradient(135deg, #1B1F22, #123A3F)', imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-essentials', name: 'ESSENTIALS', href: '/collections/essentials', gradient: 'linear-gradient(135deg, #121416, #1B1F22)', imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-denim', name: 'DENIM', href: '/collections/denim', badge: 'SELVEDGE', gradient: 'linear-gradient(135deg, #182A3A, #123A3F)', imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-outerwear', name: 'OUTERWEAR', href: '/collections/outerwear', gradient: 'linear-gradient(135deg, #682C21, #090A0B)', imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-accessories', name: 'ACCESSORIES', href: '/shop?category=Accessories', gradient: 'linear-gradient(135deg, #C59A3A, #121416)', imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-sale', name: 'ARCHIVE SALE', href: '/shop?sale=true', badge: '-40%', gradient: 'linear-gradient(135deg, #C65A28, #682C21)', imageUrl: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=400' },
 ];
 
 export const asymmetricEditorialBlocks = [
@@ -646,6 +1059,7 @@ export const asymmetricEditorialBlocks = [
     href: '/collections/streetwear',
     size: 'large-horizontal',
     aspectRatio: '16/9',
+    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200',
     gradient: 'linear-gradient(135deg, #123A3F 0%, #090A0B 60%, #182A3A 100%)',
     label: 'EDITORIAL CAMPAIGN — 16:9',
     location: 'LOOKBOOK / VOL. 04',
@@ -658,6 +1072,7 @@ export const asymmetricEditorialBlocks = [
     href: '/collections/denim',
     size: 'small-vertical',
     aspectRatio: '4/5',
+    imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=800',
     gradient: 'linear-gradient(135deg, #182A3A 0%, #121416 70%, #090A0B 100%)',
     label: 'DENIM EDIT — 4:5',
     location: 'ARCHIVE 02',
@@ -670,6 +1085,7 @@ export const asymmetricEditorialBlocks = [
     href: '/collections/essentials',
     size: 'small-vertical',
     aspectRatio: '4/5',
+    imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=800',
     gradient: 'linear-gradient(135deg, #682C21 0%, #1B1F22 65%, #090A0B 100%)',
     label: 'KNIT EDIT — 4:5',
     location: 'AUTUMN / 26',
@@ -682,6 +1098,7 @@ export const asymmetricEditorialBlocks = [
     href: '/collections/limited-drop',
     size: 'large-vertical',
     aspectRatio: '3/4',
+    imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
     gradient: 'linear-gradient(135deg, #C65A28 0%, #123A3F 50%, #090A0B 100%)',
     label: 'LIMITED CAPSULE — 3:4',
     location: 'RUNWAY 01',
@@ -694,6 +1111,7 @@ export const asymmetricEditorialBlocks = [
     href: '/shop?fit=Oversized',
     size: 'large-horizontal',
     aspectRatio: '16/9',
+    imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=1200',
     gradient: 'linear-gradient(135deg, #1B1F22 0%, #121416 60%, #682C21 100%)',
     label: 'STUDIO ARCHIVE — 16:9',
     location: 'SERIES 03',

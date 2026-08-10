@@ -56,11 +56,12 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             type="product"
             aspectRatio="4/5"
             imageUrl={product.imageUrl}
+            hoverImageUrl={product.hoverImageUrl}
             altText={product.name}
             label={product.subCategory || product.category}
             subLabel={selectedColor.name}
             gradient={product.placeholderGradient || 'linear-gradient(135deg, #F0EDE6 0%, #E2DDD3 50%, #ECE7DD 100%)'}
-            className="w-full transform group-hover:scale-105 transition-transform duration-500 ease-out"
+            className="w-full"
           />
         </Link>
 

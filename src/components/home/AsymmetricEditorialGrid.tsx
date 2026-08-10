@@ -29,14 +29,14 @@ export const AsymmetricEditorialGrid: React.FC = () => {
           </div>
         </div>
 
-        {/* Intentionally Uneven 12-Column CSS Grid with Real High-Fashion Photography */}
+        {/* Intentionally Uneven 12-Column CSS Grid with High-Fashion Editorial Photography */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
           {/* Block 1: Large Horizontal (8 cols) */}
           <div className="md:col-span-8 group relative overflow-hidden rounded-[2px] border border-black/10 hover:border-black/30 transition-all duration-300 shadow-md bg-white">
             <MediaPlaceholder
               type="editorial"
               aspectRatio="16/9"
-              imageUrl="/images/editorial-street.png"
+              imageUrl={asymmetricEditorialBlocks[0].imageUrl || '/images/editorial-street.png'}
               altText="Street Essentials Oversized Heavyweight Cotton"
               label={asymmetricEditorialBlocks[0].label}
               className="w-full min-h-[320px] sm:min-h-[440px]"
@@ -73,7 +73,7 @@ export const AsymmetricEditorialGrid: React.FC = () => {
             <MediaPlaceholder
               type="editorial"
               aspectRatio="4/5"
-              imageUrl="/images/editorial-denim.png"
+              imageUrl={asymmetricEditorialBlocks[1].imageUrl || '/images/editorial-denim.png'}
               altText="Japanese 14.5oz Okayama Raw Selvedge Denim"
               label={asymmetricEditorialBlocks[1].label}
               className="w-full min-h-[320px] sm:min-h-[440px]"
@@ -110,7 +110,7 @@ export const AsymmetricEditorialGrid: React.FC = () => {
             <MediaPlaceholder
               type="editorial"
               aspectRatio="4/5"
-              imageUrl="/images/editorial-knitwear.png"
+              imageUrl={asymmetricEditorialBlocks[2].imageUrl || '/images/editorial-knitwear.png'}
               altText="Monochrome Chunky Ribbed Organic Knitwear"
               label={asymmetricEditorialBlocks[2].label}
               className="w-full min-h-[320px] sm:min-h-[420px]"
@@ -147,7 +147,7 @@ export const AsymmetricEditorialGrid: React.FC = () => {
             <MediaPlaceholder
               type="editorial"
               aspectRatio="3/4"
-              imageUrl="/images/editorial-sculpt.png"
+              imageUrl={asymmetricEditorialBlocks[3].imageUrl || '/images/editorial-sculpt.png'}
               altText="The Sculpt Series Boned Corset Top and Trousers"
               label={asymmetricEditorialBlocks[3].label}
               className="w-full min-h-[320px] sm:min-h-[420px]"
@@ -184,7 +184,7 @@ export const AsymmetricEditorialGrid: React.FC = () => {
             <MediaPlaceholder
               type="editorial"
               aspectRatio="4/5"
-              imageUrl="/images/editorial-uniform.png"
+              imageUrl={asymmetricEditorialBlocks[4].imageUrl || '/images/editorial-uniform.png'}
               altText="Everyday Unisex Uniform Technical Bomber Jacket"
               label={asymmetricEditorialBlocks[4].label}
               className="w-full min-h-[320px] sm:min-h-[420px]"

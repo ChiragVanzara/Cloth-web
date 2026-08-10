@@ -3,6 +3,7 @@ import './globals.css';
 import { CartProvider } from '@/context/CartContext';
 import { WishlistProvider } from '@/context/WishlistContext';
 import { ToastProvider } from '@/context/ToastContext';
+import { SmoothScrollProvider } from '@/components/ui/SmoothScrollProvider';
 import { AnnouncementBar } from '@/components/layout/AnnouncementBar';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
@@ -38,16 +39,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-[#F7F7F5] text-[#111315] min-h-screen flex flex-col antialiased font-secondary">
-        <ToastProvider>
-          <CartProvider>
-            <WishlistProvider>
-              <AnnouncementBar />
-              <Navbar />
-              <main className="flex-1 w-full">{children}</main>
-              <Footer />
-            </WishlistProvider>
-          </CartProvider>
-        </ToastProvider>
+        <SmoothScrollProvider>
+          <ToastProvider>
+            <CartProvider>
+              <WishlistProvider>
+                <AnnouncementBar />
+                <Navbar />
+                <main className="flex-1 w-full">{children}</main>
+                <Footer />
+              </WishlistProvider>
+            </CartProvider>
+          </ToastProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

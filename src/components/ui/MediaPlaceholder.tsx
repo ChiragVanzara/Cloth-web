@@ -22,6 +22,7 @@ export interface MediaPlaceholderProps {
   subLabel?: string;
   gradient?: string;
   imageUrl?: string;
+  hoverImageUrl?: string;
   altText?: string;
   showGridLines?: boolean;
   showCoordinates?: boolean;
@@ -54,6 +55,7 @@ export const MediaPlaceholder: React.FC<MediaPlaceholderProps> = ({
   subLabel,
   gradient,
   imageUrl,
+  hoverImageUrl,
   altText = 'Fashion Editorial Image',
   showGridLines = true,
   showCoordinates = true,
@@ -67,7 +69,7 @@ export const MediaPlaceholder: React.FC<MediaPlaceholderProps> = ({
   const getAspectRatioStyle = () => {
     if (aspectRatio) {
       if (aspectRatio === '16/9') return '16 / 9';
-      if (aspectRatio === '4/5') return '4/5';
+      if (aspectRatio === '4/5') return '4 / 5';
       if (aspectRatio === '1/1') return '1 / 1';
       if (aspectRatio === '3/4') return '3 / 4';
       if (aspectRatio === '21/9') return '21 / 9';
@@ -102,17 +104,31 @@ export const MediaPlaceholder: React.FC<MediaPlaceholderProps> = ({
     >
       {/* Real High-Fashion Photography Image */}
       {imageUrl ? (
-        <>
+        <div className="absolute inset-0 w-full h-full">
           <img
             src={imageUrl}
             alt={altText}
-            className={`w-full h-full object-cover object-center ${
-              hoverZoom ? 'transform group-hover:scale-105 transition-transform duration-700 ease-out' : ''
-            }`}
+            loading="lazy"
+            className={`w-full h-full object-cover object-center transition-all duration-700 ease-out ${
+              hoverImageUrl ? 'group-hover:opacity-0' : ''
+            } ${hoverZoom && !hoverImageUrl ? 'transform group-hover:scale-105' : ''}`}
           />
+
+          {/* Alternate Hover Image */}
+          {hoverImageUrl && (
+            <img
+              src={hoverImageUrl}
+              alt={`${altText} alternate view`}
+              loading="lazy"
+              className={`absolute inset-0 w-full h-full object-cover object-center opacity-0 group-hover:opacity-100 transition-all duration-700 ease-out ${
+                hoverZoom ? 'transform scale-100 group-hover:scale-105' : ''
+              }`}
+            />
+          )}
+
           {/* Subtle Contrast Vignette */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent pointer-events-none" />
-        </>
+        </div>
       ) : (
         <>
           {/* Background Studio Lighting Effect */}

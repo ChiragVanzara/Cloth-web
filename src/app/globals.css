@@ -333,3 +333,48 @@ button {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* ==================================================
+   LENIS ULTRA-SMOOTH SCROLLING ENHANCEMENTS
+================================================== */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Smooth Momentum Transitions & Acceleration */
+.smooth-momentum {
+  will-change: transform, scroll-position;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.image-zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.image-zoom-container img {
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+  will-change: transform;
+}
+
+.image-zoom-container:hover img {
+  transform: scale(1.06);
+}
