@@ -30,70 +30,75 @@ export default function OrdersPage() {
   ];
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-screen pb-20 select-none">
-      <div className="border-b border-white/10 bg-[#121416]/40 py-8">
-        <div className="layout-container">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-screen pb-20 select-none">
+      <div className="border-b border-black/10 bg-white py-8">
+        <div className="vostra-container">
           <Link
             href="/account"
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase text-white/50 hover:text-white mb-2"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase text-[#757A82] hover:text-[#111315] mb-2"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>BACK TO ACCOUNT PORTAL</span>
           </Link>
-          <h1 className="heading-xl text-white font-primary font-bold uppercase tracking-tight">
+          <h1 className="heading-xl text-[#111315] font-primary font-bold uppercase tracking-tight">
             YOUR ORDER HISTORY & TRACKING
           </h1>
         </div>
       </div>
 
-      <div className="layout-container pt-8 max-w-5xl space-y-6">
+      <div className="vostra-container pt-8 max-w-5xl space-y-6">
         {orders.map((order) => (
           <div
             key={order.id}
-            className="p-6 bg-[#121416] border border-white/10 rounded-sm space-y-4 font-mono text-xs"
+            className="p-6 bg-white border border-black/10 rounded-sm space-y-4 font-mono text-xs shadow-sm"
           >
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-white/10 gap-2">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-black/10 gap-2">
               <div className="flex items-center gap-3">
-                <span className="font-primary text-base font-bold text-white uppercase">
+                <span className="font-primary text-base font-bold text-[#111315] uppercase">
                   {order.id}
                 </span>
                 <span
-                  className={`px-2 py-0.5 rounded-sm text-[10px] font-bold uppercase ${
+                  className={`px-2 py-0.5 text-[10px] font-bold rounded-sm uppercase ${
                     order.status === 'In Transit'
-                      ? 'bg-[#123A3F] text-[#1ECAD3]'
-                      : 'bg-white/10 text-white'
+                      ? 'bg-[#E2ECEB] text-[#0E6068]'
+                      : 'bg-[#EAEAE4] text-[#111315]'
                   }`}
                 >
                   {order.status}
                 </span>
               </div>
-              <div className="text-white/50">
-                PLACED ON {order.date} • {order.courier}
-              </div>
+              <span className="text-[#757A82]">ORDER PLACED: {order.date}</span>
             </div>
 
             <div className="space-y-2">
               {order.items.map((item, idx) => (
-                <div key={idx} className="flex justify-between text-white/80 py-1">
-                  <span>
-                    {item.name} <span className="text-white/40">({item.size}, {item.color}) x{item.qty}</span>
+                <div key={idx} className="flex justify-between items-center text-xs">
+                  <div>
+                    <span className="font-bold text-[#111315]">{item.name}</span>
+                    <span className="text-[#757A82] ml-2 font-mono">
+                      (SIZE: {item.size} • {item.color} • QTY {item.qty})
+                    </span>
+                  </div>
+                  <span className="font-bold text-[#111315]">
+                    ₹{(item.price * item.qty).toLocaleString('en-IN')}
                   </span>
-                  <span className="font-bold text-white">₹{item.price.toLocaleString('en-IN')}</span>
                 </div>
               ))}
             </div>
 
-            <div className="pt-3 border-t border-white/10 flex items-center justify-between">
-              <div className="text-white/50">
-                TRACKING: <strong className="text-white">{order.trackingNumber}</strong>
+            <div className="pt-3 border-t border-black/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs text-[#757A82]">
+              <div>
+                <span>COURIER: {order.courier} • </span>
+                <span className="text-[#0E6068] font-bold">{order.trackingNumber}</span>
               </div>
+
               <div className="flex items-center gap-4">
-                <span className="text-sm font-primary font-bold text-white">
+                <span className="text-sm font-bold text-[#111315]">
                   TOTAL: ₹{order.total.toLocaleString('en-IN')}
                 </span>
                 <Link
                   href={`/account/orders/${order.id}`}
-                  className="btn-primary text-xs py-2 px-3 flex items-center gap-1"
+                  className="btn-secondary text-xs py-1.5 px-3 flex items-center gap-1"
                 >
                   <span>LIVE TRACKING</span>
                   <ArrowRight className="w-3 h-3" />

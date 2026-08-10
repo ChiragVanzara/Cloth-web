@@ -25,14 +25,15 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-[85vh] flex items-center justify-center p-4 sm:p-8 select-none">
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 bg-[#121416] border border-white/15 rounded-[2px] overflow-hidden shadow-2xl">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-[85vh] flex items-center justify-center p-4 sm:p-8 select-none">
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-xl">
         {/* Left Side: Editorial Backdrop Placeholder */}
-        <div className="hidden md:block relative">
+        <div className="hidden md:block relative bg-[#F7F7F5]">
           <MediaPlaceholder
             type="portrait"
             aspectRatio="4/5"
-            gradient="linear-gradient(135deg, #182A3A 0%, #123A3F 50%, #090A0B 100%)"
+            imageUrl="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=800"
+            altText="Member Editorial"
             label="MEMBER EDITORIAL // AUTUMN 26"
             subLabel="EARLY ACCESS & DROP PRIVILEGES"
             className="w-full h-full min-h-[460px]"
@@ -42,21 +43,21 @@ export default function LoginPage() {
         {/* Right Side: Login Form */}
         <div className="p-8 sm:p-12 flex flex-col justify-between space-y-6">
           <div>
-            <div className="flex items-center gap-2 text-[10px] font-mono tracking-widest text-[#1ECAD3] uppercase font-bold mb-1">
+            <div className="flex items-center gap-2 text-[10px] font-mono tracking-widest text-[#0E6068] uppercase font-bold mb-1">
               <Sparkles className="w-3.5 h-3.5" />
               <span>VOSTRA PASSPORT</span>
             </div>
-            <h1 className="heading-xl text-white font-primary font-bold uppercase tracking-tight">
+            <h1 className="heading-xl text-[#111315] font-primary font-bold uppercase tracking-tight">
               SIGN IN TO YOUR ACCOUNT
             </h1>
-            <p className="text-xs text-white/60 font-secondary mt-1">
+            <p className="text-xs text-[#4A4E54] font-secondary mt-1">
               Access order timelines, curated drop invitations, and saved addresses.
             </p>
           </div>
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+              <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                 EMAIL ADDRESS
               </label>
               <input
@@ -64,19 +65,19 @@ export default function LoginPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="vip@vostra.studio"
-                className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white transition-colors"
+                placeholder="your@email.com"
+                className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black transition-colors"
               />
             </div>
 
             <div>
-              <div className="flex items-center justify-between mb-1">
-                <label className="text-[11px] font-mono text-white/60 uppercase">
+              <div className="flex justify-between items-center mb-1">
+                <label className="text-[11px] font-mono text-[#4A4E54] uppercase">
                   PASSWORD
                 </label>
                 <Link
                   href="/forgot-password"
-                  className="text-[10px] font-mono text-[#C65A28] hover:underline uppercase"
+                  className="text-[10px] font-mono text-[#0E6068] hover:underline uppercase font-bold"
                 >
                   FORGOT PASSWORD?
                 </Link>
@@ -87,14 +88,13 @@ export default function LoginPage() {
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="••••••••••••"
-                  className="w-full bg-[#090A0B] border border-white/15 pl-3.5 pr-10 py-2.5 text-xs font-mono text-white rounded-sm focus:outline-none focus:border-white transition-colors"
+                  placeholder="••••••••"
+                  className="w-full bg-[#F7F7F5] border border-black/15 pl-3.5 pr-10 py-2.5 text-xs font-mono text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black transition-colors"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white"
-                  aria-label="Toggle password visibility"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-[#757A82] hover:text-[#111315]"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -103,21 +103,23 @@ export default function LoginPage() {
 
             <button
               type="submit"
-              className="w-full btn-primary text-xs py-3.5 flex items-center justify-center gap-2 font-bold"
+              className="w-full btn-primary text-xs py-3 flex items-center justify-center gap-2 mt-2"
             >
-              <span>SIGN IN</span>
+              <span>ACCESS ACCOUNT</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
 
-          {/* Social Auth and Register link */}
-          <div className="pt-4 border-t border-white/10 space-y-3 text-center">
-            <p className="text-xs font-secondary text-white/60">
-              New to VOSTRA Studio?{' '}
-              <Link href="/register" className="text-[#1ECAD3] hover:underline font-bold font-mono">
-                CREATE AN ACCOUNT
-              </Link>
+          <div className="pt-6 border-t border-black/10 text-center space-y-2">
+            <p className="text-xs text-[#4A4E54] font-secondary">
+              Don't have a VOSTRA Passport?
             </p>
+            <Link
+              href="/register"
+              className="inline-block text-xs font-mono text-[#0E6068] font-bold hover:underline uppercase"
+            >
+              CREATE AN ACCOUNT NOW →
+            </Link>
           </div>
         </div>
       </div>

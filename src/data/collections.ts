@@ -10,7 +10,8 @@ export const mockCollections: Collection[] = [
     itemCount: 14,
     season: 'Autumn / Winter 2026',
     accentColor: '#C65A28',
-    gradient: 'linear-gradient(135deg, #1B1F22 0%, #123A3F 60%, #090A0B 100%)',
+    imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200',
+    gradient: '#FFFFFF',
     badge: 'POPULAR',
     featured: true
   },
@@ -22,8 +23,9 @@ export const mockCollections: Collection[] = [
     description: 'Pure 14.5oz unwashed raw denim engineered to mold to the unique contours and lifestyle wear patterns of the wearer over years of intentional use.',
     itemCount: 9,
     season: 'Core Archive',
-    accentColor: '#182A3A',
-    gradient: 'linear-gradient(135deg, #182A3A 0%, #090A0B 70%, #123A3F 100%)',
+    accentColor: '#0E6068',
+    imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=1200',
+    gradient: '#FFFFFF',
     badge: 'SELVEDGE',
     featured: true
   },
@@ -35,8 +37,9 @@ export const mockCollections: Collection[] = [
     description: 'Elevated basic tees, baby tees, relaxed trousers, and structured knit polos designed as permanent building blocks for the discerning modern wardrobe.',
     itemCount: 18,
     season: 'Permanent Series',
-    accentColor: '#123A3F',
-    gradient: 'linear-gradient(135deg, #121416 0%, #1B1F22 55%, #090A0B 100%)',
+    accentColor: '#0E6068',
+    imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=1200',
+    gradient: '#FFFFFF',
     badge: 'CORE',
     featured: true
   },
@@ -48,8 +51,9 @@ export const mockCollections: Collection[] = [
     description: 'Limited edition high-fashion pieces featuring architectural boning channels, asymmetric handkerchief hemlines, and heavy industrial hardware.',
     itemCount: 8,
     season: 'Limited Run / 250 Units',
-    accentColor: '#682C21',
-    gradient: 'linear-gradient(135deg, #682C21 0%, #090A0B 60%, #C65A28 100%)',
+    accentColor: '#C65A28',
+    imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200',
+    gradient: '#FFFFFF',
     badge: 'LIMITED DROP',
     featured: true
   },
@@ -61,8 +65,9 @@ export const mockCollections: Collection[] = [
     description: 'Armor against shifting city climates. Equipped with 3M Thinsulate insulation, YKK two-way zippers, and ripstop modular utility storage.',
     itemCount: 11,
     season: 'Winter 2026',
-    accentColor: '#C59A3A',
-    gradient: 'linear-gradient(135deg, #1B1F22 0%, #121416 60%, #682C21 100%)',
+    accentColor: '#A37A24',
+    imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=1200',
+    gradient: '#FFFFFF',
     badge: 'NEW DROP',
     featured: true
   },
@@ -74,8 +79,9 @@ export const mockCollections: Collection[] = [
     description: 'Stripping back distracting colors to highlight form, shadow, stitch tension, and tactile fabric depth.',
     itemCount: 16,
     season: 'Continuous Edit',
-    accentColor: '#B8BAB5',
-    gradient: 'linear-gradient(135deg, #090A0B 0%, #1B1F22 50%, #121416 100%)',
+    accentColor: '#757A82',
+    imageUrl: 'https://images.unsplash.com/photo-1520975954732-35dd22299614?auto=format&fit=crop&q=80&w=1200',
+    gradient: '#FFFFFF',
     featured: false
   }
 ];

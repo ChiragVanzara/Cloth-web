@@ -21,36 +21,36 @@ export default function FAQPage() {
   });
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-screen pb-20 select-none">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-screen pb-20 select-none">
       {/* Header Banner */}
-      <div className="border-b border-white/10 bg-[#121416]/40 py-12">
-        <div className="layout-container max-w-4xl space-y-4 text-center mx-auto">
-          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#1ECAD3] uppercase font-bold">
+      <div className="border-b border-black/10 bg-white py-12">
+        <div className="vostra-container max-w-4xl space-y-4 text-center mx-auto">
+          <div className="inline-flex items-center gap-2 text-xs font-mono text-[#0E6068] uppercase font-bold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>KNOWLEDGE BASE & GUIDELINES</span>
           </div>
-          <h1 className="display-lg text-white font-primary font-bold uppercase tracking-tight">
+          <h1 className="display-lg text-[#111315] font-primary font-bold uppercase tracking-tight">
             FREQUENTLY ASKED QUESTIONS
           </h1>
-          <p className="text-xs sm:text-sm font-secondary text-white/60 max-w-lg mx-auto">
+          <p className="text-xs sm:text-sm font-secondary text-[#4A4E54] max-w-lg mx-auto leading-relaxed">
             Everything you need to know regarding our heavyweight textile standards, shipping timelines, doorstep exchanges, and selvedge care.
           </p>
 
           {/* Quick Search in FAQ */}
           <div className="pt-4 max-w-md mx-auto relative">
-            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
+            <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#757A82]" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="SEARCH QUESTIONS (E.G. RETURNS, GSM, SIZING)..."
-              className="w-full bg-[#090A0B] border border-white/20 pl-10 pr-4 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+              className="w-full bg-[#F7F7F5] border border-black/15 pl-10 pr-4 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black shadow-sm"
             />
           </div>
         </div>
       </div>
 
-      <div className="layout-container pt-8 max-w-4xl">
+      <div className="vostra-container pt-8 max-w-4xl">
         {/* Category Pills */}
         <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6 no-scrollbar">
           {categories.map((cat) => (
@@ -59,8 +59,8 @@ export default function FAQPage() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-3 py-1.5 rounded-sm text-xs font-mono uppercase tracking-wider border whitespace-nowrap transition-colors ${
                 selectedCategory === cat
-                  ? 'bg-white text-black font-bold border-white'
-                  : 'bg-[#121416] text-white/70 border-white/10 hover:border-white/30'
+                  ? 'bg-[#111315] text-white font-bold border-[#111315] shadow-sm'
+                  : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
               }`}
             >
               {cat}
@@ -68,57 +68,58 @@ export default function FAQPage() {
           ))}
         </div>
 
-        {/* Accordions */}
+        {/* FAQ Accordion List */}
         <div className="space-y-3">
-          {filteredFAQs.length === 0 ? (
-            <div className="p-8 text-center bg-[#121416] border border-white/10 rounded-sm font-mono text-xs text-white/50">
-              NO QUESTIONS FOUND MATCHING YOUR SEARCH.
-            </div>
-          ) : (
-            filteredFAQs.map((faq) => {
-              const isOpen = openFaq === faq.id;
-              return (
-                <div
-                  key={faq.id}
-                  className="border border-white/10 rounded-sm overflow-hidden bg-[#121416]"
+          {filteredFAQs.map((faq) => {
+            const isOpen = openFaq === faq.id;
+            return (
+              <div
+                key={faq.id}
+                className="border border-black/10 rounded-sm overflow-hidden bg-white shadow-sm transition-all"
+              >
+                <button
+                  onClick={() => setOpenFaq(isOpen ? null : faq.id)}
+                  className="w-full p-4 sm:p-5 flex items-center justify-between text-left hover:bg-black/5 transition-colors gap-4"
                 >
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? null : faq.id)}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-mono text-xs sm:text-sm font-bold uppercase text-white hover:text-[#1ECAD3] transition-colors"
-                  >
-                    <span>{faq.question}</span>
-                    <ChevronDown
-                      className={`w-4 h-4 text-white/60 flex-shrink-0 transition-transform ${
-                        isOpen ? 'rotate-180 text-[#1ECAD3]' : ''
-                      }`}
-                    />
-                  </button>
+                  <div className="space-y-1">
+                    <span className="text-[10px] font-mono text-[#0E6068] uppercase font-bold tracking-wider">
+                      {faq.category}
+                    </span>
+                    <h3 className="font-primary text-sm sm:text-base font-bold text-[#111315] uppercase tracking-tight">
+                      {faq.question}
+                    </h3>
+                  </div>
+                  <ChevronDown
+                    className={`w-4 h-4 text-[#757A82] flex-shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 text-[#0E6068]' : ''
+                    }`}
+                  />
+                </button>
 
-                  {isOpen && (
-                    <div className="px-5 pb-5 text-xs sm:text-sm font-secondary text-white/70 leading-relaxed border-t border-white/5 pt-3">
-                      {faq.answer}
-                    </div>
-                  )}
-                </div>
-              );
-            })
-          )}
+                {isOpen && (
+                  <div className="p-4 sm:p-5 pt-0 border-t border-black/5 text-xs sm:text-sm font-secondary text-[#4A4E54] leading-relaxed">
+                    <p className="pt-3">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
-        {/* Still need assistance */}
-        <div className="mt-12 p-6 bg-[#121416] border border-white/10 rounded-sm flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-          <div className="space-y-1">
-            <h4 className="font-primary text-sm font-bold uppercase text-white">
-              STILL HAVE AN UNANSWERED QUESTION?
-            </h4>
-            <p className="text-xs text-white/60 font-secondary">
-              Our studio concierge team is on standby 7 days a week.
-            </p>
+        {/* Still have questions banner */}
+        <div className="mt-12 p-6 sm:p-8 bg-white border border-black/10 rounded-sm text-center space-y-3 shadow-sm">
+          <MessageSquare className="w-8 h-8 text-[#0E6068] mx-auto" />
+          <h3 className="font-primary text-base sm:text-lg font-bold uppercase text-[#111315]">
+            STILL HAVE UNRESOLVED INQUIRIES?
+          </h3>
+          <p className="text-xs text-[#4A4E54] font-secondary max-w-md mx-auto">
+            Our Delhi client relations studio is active Monday through Saturday (10:00 AM – 7:00 PM IST).
+          </p>
+          <div className="pt-2">
+            <Link href="/contact" className="btn-primary text-xs inline-block">
+              CONTACT SUPPORT STUDIO
+            </Link>
           </div>
-          <Link href="/contact" className="btn-primary text-xs flex items-center gap-2">
-            <MessageSquare className="w-3.5 h-3.5" />
-            <span>CONTACT CONCIERGE</span>
-          </Link>
         </div>
       </div>
     </div>

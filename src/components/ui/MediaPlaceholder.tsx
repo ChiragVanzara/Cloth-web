@@ -88,7 +88,9 @@ export const MediaPlaceholder: React.FC<MediaPlaceholderProps> = ({
     }
   };
 
-  const chosenGradient = gradient || variantGradients[variant] || variantGradients.bone;
+  const chosenGradient = (gradient && !gradient.includes('#090A0B') && !gradient.includes('#111315') && !gradient.includes('#121416') && !gradient.includes('#182A3A'))
+    ? gradient
+    : '#FFFFFF';
   const isCircle = type === 'circle';
 
   return (
@@ -96,7 +98,7 @@ export const MediaPlaceholder: React.FC<MediaPlaceholderProps> = ({
       onClick={onClick}
       style={{
         aspectRatio: getAspectRatioStyle(),
-        background: imageUrl ? '#EAEAE6' : chosenGradient,
+        background: imageUrl ? '#FFFFFF' : chosenGradient,
       }}
       className={`relative overflow-hidden group select-none transition-all duration-500 ${
         isCircle ? 'rounded-full border border-black/10' : 'rounded-[2px] border border-black/[0.08]'

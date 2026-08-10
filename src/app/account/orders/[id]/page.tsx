@@ -23,31 +23,31 @@ export default function OrderTrackingPage({ params }: Props) {
   ];
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-screen pb-20 select-none">
-      <div className="border-b border-white/10 bg-[#121416]/40 py-8">
-        <div className="layout-container">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-screen pb-20 select-none">
+      <div className="border-b border-black/10 bg-white py-8">
+        <div className="vostra-container">
           <Link
             href="/account/orders"
-            className="inline-flex items-center gap-2 text-xs font-mono uppercase text-white/50 hover:text-white mb-2"
+            className="inline-flex items-center gap-2 text-xs font-mono uppercase text-[#757A82] hover:text-[#111315] mb-2"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>BACK TO ALL ORDERS</span>
           </Link>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-            <h1 className="heading-xl text-white font-primary font-bold uppercase tracking-tight">
+            <h1 className="heading-xl text-[#111315] font-primary font-bold uppercase tracking-tight">
               TRACKING ORDER #{params.id}
             </h1>
-            <span className="px-3 py-1 bg-[#123A3F] text-[#1ECAD3] text-xs font-mono font-bold uppercase rounded-sm">
+            <span className="px-3 py-1 bg-[#E2ECEB] text-[#0E6068] text-xs font-mono font-bold uppercase rounded-sm">
               STATUS: OUT FOR DELIVERY
             </span>
           </div>
         </div>
       </div>
 
-      <div className="layout-container pt-8 max-w-4xl space-y-8">
+      <div className="vostra-container pt-8 max-w-4xl space-y-8">
         {/* Milestone Timeline */}
-        <div className="p-6 sm:p-8 bg-[#121416] border border-white/10 rounded-sm space-y-6">
-          <h3 className="text-xs font-mono font-bold tracking-widest text-[#1ECAD3] uppercase">
+        <div className="p-6 sm:p-8 bg-white border border-black/10 rounded-sm space-y-6 shadow-sm">
+          <h3 className="text-xs font-mono font-bold tracking-widest text-[#0E6068] uppercase">
             LIVE LOGISTICS MILESTONES
           </h3>
 
@@ -57,44 +57,38 @@ export default function OrderTrackingPage({ params }: Props) {
                 <div
                   className={`w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 z-10 ${
                     m.done
-                      ? 'bg-[#1ECAD3] text-black font-bold'
+                      ? 'bg-[#0E6068] text-white font-bold'
                       : m.active
                       ? 'bg-[#C65A28] text-white animate-pulse'
-                      : 'bg-white/10 text-white/40'
+                      : 'bg-black/10 text-[#757A82]'
                   }`}
                 >
-                  {m.done ? <CheckCircle2 className="w-4 h-4 stroke-[3]" /> : idx + 1}
+                  {m.done ? <CheckCircle2 className="w-4 h-4" /> : idx + 1}
                 </div>
 
-                {idx < milestones.length - 1 && (
-                  <div className="absolute left-3 top-6 bottom-[-24px] w-[1px] bg-white/15" />
-                )}
-
-                <div className="flex-1 pb-2">
-                  <div className={`font-bold uppercase ${m.active ? 'text-[#C65A28]' : m.done ? 'text-white' : 'text-white/40'}`}>
+                <div className="space-y-0.5 flex-1">
+                  <div className="font-bold text-[#111315] uppercase tracking-wide">
                     {m.title}
                   </div>
-                  <div className="text-[11px] text-white/50">{m.time}</div>
+                  <div className="text-[11px] text-[#757A82]">{m.time}</div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Courier Details */}
-        <div className="p-6 bg-[#121416] border border-white/10 rounded-sm text-xs font-mono grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div>
-            <span className="text-white/50 block">LOGISTICS PARTNER</span>
-            <strong className="text-white">Delhivery Air Logistics</strong>
+        {/* Courier Support Details */}
+        <div className="p-6 bg-white border border-black/10 rounded-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-sm">
+          <div className="space-y-1 font-mono text-xs text-[#757A82]">
+            <span className="font-bold text-[#111315] uppercase block">
+              COURIER PARTNER: DELHIVERY EXPRESS AIR
+            </span>
+            <p>AWB WAYBILL NO: #DEL-8892100492 • OTP REQUIRED AT DELIVERY</p>
           </div>
-          <div>
-            <span className="text-white/50 block">AIRWAY BILL (AWB)</span>
-            <strong className="text-white">DEL-8892100492</strong>
-          </div>
-          <div>
-            <span className="text-white/50 block">ESTIMATED DROP</span>
-            <strong className="text-[#1ECAD3]">TODAY BY 18:00 HRS</strong>
-          </div>
+
+          <Link href="/contact" className="btn-secondary text-xs">
+            CONTACT CONCIERGE DESK
+          </Link>
         </div>
       </div>
     </div>

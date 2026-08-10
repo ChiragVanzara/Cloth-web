@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { FilterState, SortOption } from '@/types';
+import { FilterState } from '@/types';
 import { filterSizes, filterFits, filterColors, allCategories, outfitCategories } from '@/data/categories';
-import { X, RotateCcw, Check } from 'lucide-react';
+import { RotateCcw, Check } from 'lucide-react';
 
 interface FilterSidebarProps {
   filters: FilterState;
@@ -77,14 +77,14 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
     filters.priceRange[1] < 10000;
 
   return (
-    <aside className="w-full space-y-6 text-white select-none">
+    <aside className="w-full space-y-6 text-[#111315] select-none">
       {/* Top Header & Clear All */}
-      <div className="flex items-center justify-between pb-3 border-b border-white/10">
+      <div className="flex items-center justify-between pb-3 border-b border-black/10">
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono font-bold tracking-widest uppercase">
             FILTERS
           </span>
-          <span className="text-[10px] font-mono text-white/50">
+          <span className="text-[10px] font-mono text-[#757A82]">
             ({productCount} ITEMS)
           </span>
         </div>
@@ -92,7 +92,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
         {hasActiveFilters && (
           <button
             onClick={onReset}
-            className="flex items-center gap-1 text-[10px] font-mono text-[#C65A28] hover:underline uppercase"
+            className="flex items-center gap-1 text-[10px] font-mono text-[#C65A28] hover:underline uppercase font-bold"
           >
             <RotateCcw className="w-3 h-3" />
             <span>RESET</span>
@@ -102,7 +102,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
       {/* Gender Tabs */}
       <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-white/60">
+        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
           GENDER
         </h4>
         <div className="grid grid-cols-3 gap-1.5">
@@ -114,8 +114,8 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
                 onClick={() => toggleGender(g)}
                 className={`py-1.5 px-2 text-center text-xs font-mono uppercase tracking-wider rounded-sm border transition-colors ${
                   isSelected
-                    ? 'bg-white text-black font-bold border-white'
-                    : 'bg-[#121416] text-white/70 border-white/10 hover:border-white/30'
+                    ? 'bg-[#111315] text-white font-bold border-[#111315]'
+                    : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
                 }`}
               >
                 {g}
@@ -127,31 +127,26 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
       {/* Categories */}
       <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-white/60">
-          CATEGORIES
+        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
+          CATEGORY
         </h4>
-        <div className="max-h-48 overflow-y-auto space-y-1.5 pr-1 no-scrollbar">
+        <div className="space-y-1">
           {allCategories.map((cat) => {
-            const isSelected = filters.category.includes(cat.name);
+            const isSelected = filters.category.includes(cat);
             return (
               <label
-                key={cat.id}
-                onClick={() => toggleCategory(cat.name)}
-                className="flex items-center justify-between text-xs font-mono text-white/80 hover:text-white cursor-pointer py-1"
+                key={cat}
+                className="flex items-center justify-between py-1 cursor-pointer group text-xs font-secondary hover:text-[#111315]"
               >
-                <div className="flex items-center gap-2">
-                  <div
-                    className={`w-3.5 h-3.5 rounded-sm border flex items-center justify-center ${
-                      isSelected
-                        ? 'bg-[#1ECAD3] border-[#1ECAD3] text-black'
-                        : 'border-white/30 bg-transparent'
-                    }`}
-                  >
-                    {isSelected && <Check className="w-3 h-3 stroke-[3]" />}
-                  </div>
-                  <span className="truncate">{cat.name}</span>
-                </div>
-                <span className="text-[10px] text-white/40">({cat.count})</span>
+                <span className={isSelected ? 'text-[#111315] font-bold' : 'text-[#4A4E54]'}>
+                  {cat}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={isSelected}
+                  onChange={() => toggleCategory(cat)}
+                  className="accent-[#111315] rounded-sm cursor-pointer"
+                />
               </label>
             );
           })}
@@ -160,7 +155,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
       {/* Sizes */}
       <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-white/60">
+        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
           SIZE
         </h4>
         <div className="grid grid-cols-3 gap-1.5">
@@ -170,10 +165,10 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
               <button
                 key={size}
                 onClick={() => toggleSize(size)}
-                className={`py-1.5 text-center text-xs font-mono uppercase rounded-sm border transition-colors ${
+                className={`py-1.5 text-center text-xs font-mono rounded-sm border transition-colors ${
                   isSelected
-                    ? 'bg-[#C65A28] border-[#C65A28] text-white font-bold'
-                    : 'bg-[#121416] text-white/70 border-white/10 hover:border-white/30'
+                    ? 'bg-[#111315] text-white font-bold border-[#111315]'
+                    : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
                 }`}
               >
                 {size}
@@ -185,37 +180,38 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
       {/* Colors */}
       <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-white/60">
-          PALETTE & TONES
+        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
+          COLOR
         </h4>
-        <div className="grid grid-cols-3 gap-2">
+        <div className="flex flex-wrap gap-2">
           {filterColors.map((color) => {
             const isSelected = filters.color.includes(color.name);
             return (
               <button
                 key={color.name}
                 onClick={() => toggleColor(color.name)}
-                className={`flex items-center gap-1.5 p-1.5 rounded-sm border text-[10px] font-mono uppercase truncate ${
+                className={`w-6 h-6 rounded-full border transition-all flex items-center justify-center ${
                   isSelected
-                    ? 'border-white bg-white/15 text-white'
-                    : 'border-white/10 bg-[#121416] text-white/60 hover:border-white/30'
+                    ? 'border-[#111315] ring-2 ring-black/20 scale-110'
+                    : 'border-black/20 hover:scale-105'
                 }`}
+                style={{ backgroundColor: color.hex }}
+                title={color.name}
+                aria-label={`Color: ${color.name}`}
               >
-                <span
-                  className="w-2.5 h-2.5 rounded-full border border-white/20 flex-shrink-0"
-                  style={{ backgroundColor: color.hex }}
-                />
-                <span className="truncate">{color.name.split(' ')[0]}</span>
+                {isSelected && (
+                  <Check className="w-3 h-3 text-white drop-shadow-sm" />
+                )}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* Fit Taxonomy */}
+      {/* Fit Profile */}
       <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-white/60">
-          SILHOUETTE FIT
+        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
+          FIT PROFILE
         </h4>
         <div className="flex flex-wrap gap-1.5">
           {filterFits.map((fit) => {
@@ -224,10 +220,10 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
               <button
                 key={fit}
                 onClick={() => toggleFit(fit)}
-                className={`px-2.5 py-1 text-[11px] font-mono uppercase rounded-sm border transition-colors ${
+                className={`px-2.5 py-1 text-[11px] font-mono rounded-sm border transition-colors ${
                   isSelected
-                    ? 'bg-white text-black font-bold border-white'
-                    : 'bg-[#121416] text-white/70 border-white/10 hover:border-white/30'
+                    ? 'bg-[#111315] text-white font-bold border-[#111315]'
+                    : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
                 }`}
               >
                 {fit}
@@ -237,42 +233,32 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
         </div>
       </div>
 
-      {/* Outfit Discovery */}
+      {/* Outfit Occasion */}
       <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-white/60">
-          OUTFIT EDIT
+        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
+          OCCASION / MOOD
         </h4>
-        <div className="flex flex-wrap gap-1.5">
-          {outfitCategories.slice(0, 8).map((outfit) => {
+        <div className="space-y-1">
+          {outfitCategories.map((outfit) => {
             const isSelected = filters.outfitCategory.includes(outfit);
             return (
-              <button
+              <label
                 key={outfit}
-                onClick={() => toggleOutfit(outfit)}
-                className={`px-2 py-1 text-[10px] font-mono uppercase rounded-sm border transition-colors ${
-                  isSelected
-                    ? 'bg-[#123A3F] border-[#1ECAD3] text-[#1ECAD3] font-bold'
-                    : 'bg-[#121416] text-white/60 border-white/10 hover:border-white/30'
-                }`}
+                className="flex items-center justify-between py-1 cursor-pointer group text-xs font-secondary hover:text-[#111315]"
               >
-                {outfit}
-              </button>
+                <span className={isSelected ? 'text-[#111315] font-bold' : 'text-[#4A4E54]'}>
+                  {outfit}
+                </span>
+                <input
+                  type="checkbox"
+                  checked={isSelected}
+                  onChange={() => toggleOutfit(outfit)}
+                  className="accent-[#111315] rounded-sm cursor-pointer"
+                />
+              </label>
             );
           })}
         </div>
-      </div>
-
-      {/* Sale Only Toggle */}
-      <div className="pt-2 border-t border-white/10">
-        <label className="flex items-center justify-between text-xs font-mono text-white/80 cursor-pointer py-1">
-          <span className="uppercase text-[#C65A28] font-bold">SALE ARCHIVE ONLY</span>
-          <input
-            type="checkbox"
-            checked={filters.onSaleOnly}
-            onChange={(e) => onFilterChange({ ...filters, onSaleOnly: e.target.checked })}
-            className="w-4 h-4 accent-[#C65A28] rounded cursor-pointer"
-          />
-        </label>
       </div>
     </aside>
   );

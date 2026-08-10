@@ -29,19 +29,19 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
       />
 
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-8">
-        <div className="w-screen max-w-md bg-[#090A0B] border-l border-white/10 text-white flex flex-col shadow-2xl">
+        <div className="w-screen max-w-md bg-white border-l border-black/10 text-[#111315] flex flex-col shadow-2xl">
           {/* Drawer Header */}
-          <div className="px-6 py-5 border-b border-white/10 flex items-center justify-between">
-            <span className="font-primary text-sm font-bold uppercase tracking-wider">
+          <div className="px-6 py-5 border-b border-black/10 flex items-center justify-between">
+            <span className="font-primary text-sm font-bold uppercase tracking-wider text-[#111315]">
               FILTER CATALOG
             </span>
             <button
               onClick={onClose}
-              className="p-1.5 text-white/60 hover:text-white"
+              className="p-1.5 text-[#757A82] hover:text-[#111315]"
               aria-label="Close filters"
             >
               <X className="w-5 h-5" />
@@ -58,14 +58,14 @@ export const FilterDrawer: React.FC<FilterDrawerProps> = ({
             />
           </div>
 
-          {/* Drawer Footer with Apply Button */}
-          <div className="px-6 py-4 border-t border-white/10 bg-[#121416]">
+          {/* Apply Button */}
+          <div className="p-6 border-t border-black/10 bg-[#F7F7F5]">
             <button
               onClick={onClose}
-              className="w-full btn-primary text-xs py-3 flex items-center justify-center gap-2"
+              className="w-full btn-primary flex items-center justify-center gap-2 text-xs"
             >
               <Check className="w-4 h-4" />
-              <span>APPLY FILTERS ({productCount} RESULTS)</span>
+              <span>APPLY FILTERS ({productCount} PRODUCTS)</span>
             </button>
           </div>
         </div>

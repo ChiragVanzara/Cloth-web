@@ -6,10 +6,10 @@ import { X, Ruler } from 'lucide-react';
 interface SizeGuideModalProps {
   isOpen: boolean;
   onClose: () => void;
-  category: string;
+  category?: string;
 }
 
-export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose, category }) => {
+export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose, category = 'Apparel' }) => {
   const [unit, setUnit] = useState<'in' | 'cm'>('in');
 
   if (!isOpen) return null;
@@ -28,21 +28,21 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
       {/* Backdrop */}
       <div
         onClick={onClose}
-        className="absolute inset-0 bg-black/80 backdrop-blur-sm transition-opacity"
+        className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity"
       />
 
-      <div className="relative w-full max-w-xl bg-[#090A0B] border border-white/15 text-white p-6 sm:p-8 rounded-[2px] shadow-2xl z-10 space-y-6">
+      <div className="relative w-full max-w-xl bg-white border border-black/10 text-[#111315] p-6 sm:p-8 rounded-[2px] shadow-2xl z-10 space-y-6">
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-white/10">
+        <div className="flex items-center justify-between pb-3 border-b border-black/10">
           <div className="flex items-center gap-2">
-            <Ruler className="w-4 h-4 text-[#1ECAD3]" />
-            <h3 className="font-primary text-base font-bold uppercase tracking-wider">
+            <Ruler className="w-4 h-4 text-[#0E6068]" />
+            <h3 className="font-primary text-base font-bold uppercase tracking-wider text-[#111315]">
               SIZE & MEASUREMENT GUIDE // {category.toUpperCase()}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="text-white/60 hover:text-white"
+            className="text-[#757A82] hover:text-[#111315]"
             aria-label="Close size guide"
           >
             <X className="w-5 h-5" />
@@ -50,31 +50,35 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
         </div>
 
         {/* Unit Selector */}
-        <div className="flex items-center justify-between">
-          <p className="text-xs text-white/60 font-secondary">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <p className="text-xs text-[#4A4E54] font-secondary leading-relaxed">
             All garments follow an architectural drop-shoulder cut. Measure against your best-fitting tee or trouser.
           </p>
 
-          <div className="flex border border-white/20 rounded-sm overflow-hidden text-xs font-mono">
+          <div className="flex border border-black/15 rounded-sm overflow-hidden text-xs font-mono self-start sm:self-auto">
             <button
               onClick={() => setUnit('in')}
-              className={`px-3 py-1 uppercase ${unit === 'in' ? 'bg-white text-black font-bold' : 'bg-[#121416] text-white/60'}`}
+              className={`px-3 py-1 uppercase font-bold transition-colors ${
+                unit === 'in' ? 'bg-[#111315] text-white' : 'bg-white text-[#4A4E54]'
+              }`}
             >
               INCHES
             </button>
             <button
               onClick={() => setUnit('cm')}
-              className={`px-3 py-1 uppercase ${unit === 'cm' ? 'bg-white text-black font-bold' : 'bg-[#121416] text-white/60'}`}
+              className={`px-3 py-1 uppercase font-bold transition-colors ${
+                unit === 'cm' ? 'bg-[#111315] text-white' : 'bg-white text-[#4A4E54]'
+              }`}
             >
               CM
             </button>
           </div>
         </div>
 
-        {/* Table */}
-        <div className="overflow-x-auto border border-white/10 rounded-sm">
-          <table className="w-full text-left text-xs font-mono">
-            <thead className="bg-[#121416] text-white/70 uppercase border-b border-white/10">
+        {/* Measurements Table */}
+        <div className="border border-black/10 rounded-sm overflow-hidden font-mono text-xs">
+          <table className="w-full text-left">
+            <thead className="bg-[#F7F7F5] border-b border-black/10 text-[#757A82] text-[10px] tracking-wider uppercase">
               <tr>
                 <th className="p-3">SIZE</th>
                 <th className="p-3">CHEST</th>
@@ -83,23 +87,23 @@ export const SizeGuideModal: React.FC<SizeGuideModalProps> = ({ isOpen, onClose,
                 <th className="p-3">SLEEVE</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5 text-white/80">
-              {measurements.map((row) => (
-                <tr key={row.size} className="hover:bg-white/5">
-                  <td className="p-3 font-bold text-white">{row.size}</td>
-                  <td className="p-3">{row.chest}</td>
-                  <td className="p-3">{row.length}</td>
-                  <td className="p-3">{row.shoulder}</td>
-                  <td className="p-3">{row.sleeve}</td>
+            <tbody className="divide-y divide-black/5 text-[#111315]">
+              {measurements.map((m) => (
+                <tr key={m.size} className="hover:bg-[#F7F7F5] transition-colors">
+                  <td className="p-3 font-bold text-[#0E6068]">{m.size}</td>
+                  <td className="p-3">{m.chest}</td>
+                  <td className="p-3">{m.length}</td>
+                  <td className="p-3">{m.shoulder}</td>
+                  <td className="p-3">{m.sleeve}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
 
-        {/* Fit Guide note */}
-        <div className="p-3 bg-[#121416] border border-white/10 rounded-sm text-[11px] font-mono text-white/60 space-y-1">
-          <strong className="text-white">PRO TIP:</strong> For an extreme boxy/runway drape, take your true size. For a tailored street silhouette, size down one step.
+        {/* Fit Tip */}
+        <div className="p-3.5 bg-[#F7F7F5] border border-black/10 rounded-sm text-xs font-mono text-[#4A4E54]">
+          <span className="text-[#C65A28] font-bold">FIT ADVICE:</span> For our intended relaxed drape, select your true size. For a tailored profile, take one size down.
         </div>
       </div>
     </div>

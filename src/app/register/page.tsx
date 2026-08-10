@@ -29,14 +29,15 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-[85vh] flex items-center justify-center p-4 sm:p-8 select-none">
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 bg-[#121416] border border-white/15 rounded-[2px] overflow-hidden shadow-2xl">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-[85vh] flex items-center justify-center p-4 sm:p-8 select-none">
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 bg-white border border-black/10 rounded-[2px] overflow-hidden shadow-xl">
         {/* Left Side: Register Editorial Media */}
-        <div className="hidden md:block relative">
+        <div className="hidden md:block relative bg-[#F7F7F5]">
           <MediaPlaceholder
             type="portrait"
             aspectRatio="4/5"
-            gradient="linear-gradient(135deg, #682C21 0%, #121416 60%, #090A0B 100%)"
+            imageUrl="https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=800"
+            altText="Join the VOSTRA Guild"
             label="BECOME AN INSIDER // 2026"
             subLabel="EARLY ACCESS • FREE SHIPPING • ARCHIVE DEALS"
             className="w-full h-full min-h-[480px]"
@@ -50,17 +51,17 @@ export default function RegisterPage() {
               <Sparkles className="w-3.5 h-3.5" />
               <span>THE VOSTRA GUILD</span>
             </div>
-            <h1 className="heading-xl text-white font-primary font-bold uppercase tracking-tight">
+            <h1 className="heading-xl text-[#111315] font-primary font-bold uppercase tracking-tight">
               CREATE YOUR ACCOUNT
             </h1>
-            <p className="text-xs text-white/60 font-secondary mt-1">
+            <p className="text-xs text-[#4A4E54] font-secondary mt-1">
               Gain access to drop countdowns, private archive sales, and rapid checkout.
             </p>
           </div>
 
           <form onSubmit={handleRegister} className="space-y-3.5">
             <div>
-              <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+              <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                 FULL NAME *
               </label>
               <input
@@ -68,13 +69,13 @@ export default function RegisterPage() {
                 required
                 value={formData.fullName}
                 onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                placeholder="e.g. Sureshkumar Vanzara"
-                className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white transition-colors"
+                placeholder="e.g. Chirag Vanzara"
+                className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+              <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                 EMAIL ADDRESS *
               </label>
               <input
@@ -82,54 +83,57 @@ export default function RegisterPage() {
                 required
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                placeholder="vip@vostra.studio"
-                className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white transition-colors"
+                placeholder="your@email.com"
+                className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
-                MOBILE NUMBER (FOR DROP SMS)
+              <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
+                MOBILE NUMBER
               </label>
               <input
                 type="tel"
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                 placeholder="+91 98765 43210"
-                className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white transition-colors"
+                className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black transition-colors"
               />
             </div>
 
             <div>
-              <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
-                SECURE PASSWORD *
+              <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
+                CHOOSE SECURE PASSWORD *
               </label>
               <input
                 type="password"
                 required
                 value={formData.password}
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                placeholder="••••••••••••"
-                className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono text-white rounded-sm focus:outline-none focus:border-white transition-colors"
+                placeholder="••••••••"
+                className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black transition-colors"
               />
             </div>
 
             <button
               type="submit"
-              className="w-full btn-primary text-xs py-3.5 flex items-center justify-center gap-2 font-bold mt-2"
+              className="w-full btn-primary text-xs py-3 flex items-center justify-center gap-2 mt-3"
             >
-              <span>REGISTER ACCOUNT</span>
+              <span>CONFIRM & REGISTER</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
 
-          <div className="pt-3 border-t border-white/10 text-center">
-            <p className="text-xs font-secondary text-white/60">
-              Already have an account?{' '}
-              <Link href="/login" className="text-[#C65A28] hover:underline font-bold font-mono">
-                SIGN IN HERE
-              </Link>
+          <div className="pt-6 border-t border-black/10 text-center space-y-2">
+            <p className="text-xs text-[#4A4E54] font-secondary">
+              Already have an account?
             </p>
+            <Link
+              href="/login"
+              className="inline-block text-xs font-mono text-[#0E6068] font-bold hover:underline uppercase"
+            >
+              SIGN IN TO YOUR PASSPORT →
+            </Link>
           </div>
         </div>
       </div>

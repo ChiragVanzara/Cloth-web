@@ -37,13 +37,13 @@ export default function CollectionDetailPage({ params }: Props) {
   const relatedCollections = mockCollections.filter((c) => c.slug !== collection.slug).slice(0, 2);
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-screen pb-20 select-none">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-screen pb-20 select-none">
       {/* Breadcrumb & Hero */}
-      <section className="py-6 border-b border-white/10">
-        <div className="layout-container">
+      <section className="py-6 border-b border-black/10 bg-white">
+        <div className="vostra-container">
           <Link
             href="/collections"
-            className="inline-flex items-center gap-2 text-xs font-mono text-white/50 hover:text-white uppercase mb-4"
+            className="inline-flex items-center gap-2 text-xs font-mono text-[#757A82] hover:text-[#111315] uppercase mb-4"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
             <span>BACK TO ALL COLLECTIONS</span>
@@ -55,46 +55,46 @@ export default function CollectionDetailPage({ params }: Props) {
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>{collection.season}</span>
               </div>
-              <h1 className="display-xl text-white font-primary font-bold uppercase tracking-tight">
+              <h1 className="display-xl text-[#111315] font-primary font-bold uppercase tracking-tight">
                 {collection.name}
               </h1>
-              <p className="text-sm sm:text-base font-primary text-[#1ECAD3] uppercase font-semibold">
+              <p className="text-sm sm:text-base font-primary text-[#0E6068] uppercase font-semibold">
                 {collection.tagline}
               </p>
-              <p className="text-xs sm:text-sm font-secondary text-white/70 leading-relaxed">
+              <p className="text-xs sm:text-sm font-secondary text-[#4A4E54] leading-relaxed">
                 {collection.description}
               </p>
-              <div className="text-xs font-mono text-white/40">
+              <div className="text-xs font-mono text-[#757A82]">
                 TOTAL ARCHIVE PIECES: {displayProducts.length}
               </div>
             </div>
 
             <div className="lg:col-span-6">
-              <MediaPlaceholder
-                type="editorial"
-                aspectRatio="16/9"
-                gradient={collection.gradient}
-                label={`EDITORIAL CAMPAIGN // ${collection.name}`}
-                className="w-full min-h-[280px] sm:min-h-[380px]"
-              />
+              <div className="rounded-[2px] overflow-hidden border border-black/10 shadow-md bg-white">
+                <MediaPlaceholder
+                  type="collection"
+                  aspectRatio="16/9"
+                  imageUrl={collection.imageUrl}
+                  altText={collection.name}
+                  label={`LOOKBOOK // ${collection.name}`}
+                  className="w-full min-h-[300px]"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Collection Products Grid */}
+      {/* Product Catalog Grid */}
       <section className="py-10">
-        <div className="layout-container">
-          <div className="flex items-center justify-between mb-6 pb-2 border-b border-white/10 text-xs font-mono">
-            <span className="text-white/60 uppercase">
-              PIECES IN THIS CHAPTER ({displayProducts.length})
+        <div className="vostra-container">
+          <div className="flex items-center justify-between mb-6 pb-2 border-b border-black/10">
+            <span className="text-xs font-mono text-[#757A82] uppercase">
+              SHOWING <strong className="text-[#111315]">{displayProducts.length}</strong> PIECES IN THIS CHAPTER
             </span>
-            <Link href="/shop" className="text-[#C65A28] hover:underline uppercase">
-              EXPLORE ALL STYLES →
-            </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {displayProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
@@ -103,39 +103,40 @@ export default function CollectionDetailPage({ params }: Props) {
       </section>
 
       {/* Related Collections */}
-      <section className="py-12 border-t border-white/10 bg-[#121416]/50">
-        <div className="layout-container space-y-6">
-          <h3 className="heading-xl text-white font-primary font-bold uppercase tracking-tight">
-            RELATED COLLECTION CHAPTERS
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {relatedCollections.map((rel) => (
-              <Link
-                key={rel.id}
-                href={`/collections/${rel.slug}`}
-                className="group p-6 bg-[#090A0B] border border-white/10 hover:border-white/30 rounded-sm flex flex-col justify-between transition-all"
-              >
-                <div className="space-y-2">
-                  <span className="text-[10px] font-mono text-white/50 uppercase">
-                    {rel.season}
-                  </span>
-                  <h4 className="font-primary text-xl font-bold uppercase text-white group-hover:text-[#1ECAD3] transition-colors">
-                    {rel.name}
-                  </h4>
-                  <p className="text-xs text-white/60 font-secondary">
-                    {rel.tagline}
-                  </p>
-                </div>
-                <div className="pt-4 flex items-center gap-2 text-xs font-mono font-bold text-[#C65A28] uppercase">
-                  <span>DISCOVER CHAPTER</span>
-                  <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
-                </div>
-              </Link>
-            ))}
+      {relatedCollections.length > 0 && (
+        <section className="py-12 border-t border-black/10 bg-white">
+          <div className="vostra-container">
+            <h3 className="text-xs font-mono text-[#757A82] tracking-widest uppercase mb-6 font-bold">
+              EXPLORE OTHER CHAPTERS
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {relatedCollections.map((relCol) => (
+                <Link
+                  key={relCol.id}
+                  href={`/collections/${relCol.slug}`}
+                  className="group p-6 bg-[#F7F7F5] border border-black/10 hover:border-black/30 rounded-sm flex flex-col justify-between transition-all shadow-sm"
+                >
+                  <div className="space-y-2">
+                    <span className="text-[10px] font-mono text-[#C65A28] uppercase font-bold">
+                      {relCol.season}
+                    </span>
+                    <h4 className="heading-lg text-[#111315] font-primary font-bold uppercase tracking-tight group-hover:text-[#0E6068] transition-colors">
+                      {relCol.name}
+                    </h4>
+                    <p className="text-xs font-secondary text-[#4A4E54] line-clamp-2">
+                      {relCol.tagline}
+                    </p>
+                  </div>
+                  <div className="pt-4 flex items-center justify-between text-xs font-mono text-[#111315] font-bold">
+                    <span>{relCol.itemCount} ITEMS</span>
+                    <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform" />
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </div>
   );
 }

@@ -1008,7 +1008,7 @@ export const heroCampaign = {
     label: 'CAMPAIGN VIDEO / 16:9 CINEMATIC LOOKBOOK',
     aspectRatio: '16/9',
     type: 'hero',
-    gradient: 'linear-gradient(135deg, #090A0B 0%, #123A3F 45%, #182A3A 75%, #121416 100%)'
+    gradient: '#FFFFFF'
   }
 };
 
@@ -1021,7 +1021,7 @@ export const promotionalBanners = [
     ctaText: 'EXPLORE SALE',
     ctaHref: '/shop?sale=true',
     imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=1000',
-    gradient: 'linear-gradient(135deg, #682C21 0%, #121416 65%, #090A0B 100%)',
+    gradient: '#FFFFFF',
     accent: '#C65A28',
     borderColor: 'rgba(198, 90, 40, 0.35)'
   },
@@ -1033,22 +1033,22 @@ export const promotionalBanners = [
     ctaText: 'SHOP NEW DROPS',
     ctaHref: '/new-arrivals',
     imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=1000',
-    gradient: 'linear-gradient(135deg, #123A3F 0%, #182A3A 60%, #090A0B 100%)',
-    accent: '#1ECAD3',
-    borderColor: 'rgba(30, 202, 211, 0.35)'
+    gradient: '#FFFFFF',
+    accent: '#0E6068',
+    borderColor: 'rgba(14, 96, 104, 0.35)'
   }
 ];
 
 export const collectionStoryCircles = [
-  { id: 'cat-new', name: 'NEW DROPS', href: '/new-arrivals', badge: 'HOT', gradient: 'linear-gradient(135deg, #C65A28, #121416)', imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-men', name: 'MEN', href: '/men', badge: 'DROPS', gradient: 'linear-gradient(135deg, #182A3A, #090A0B)', imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-women', name: 'WOMEN', href: '/women', badge: 'NEW', gradient: 'linear-gradient(135deg, #682C21, #123A3F)', imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-streetwear', name: 'STREETWEAR', href: '/collections/streetwear', badge: 'POPULAR', gradient: 'linear-gradient(135deg, #1B1F22, #123A3F)', imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-essentials', name: 'ESSENTIALS', href: '/collections/essentials', gradient: 'linear-gradient(135deg, #121416, #1B1F22)', imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-denim', name: 'DENIM', href: '/collections/denim', badge: 'SELVEDGE', gradient: 'linear-gradient(135deg, #182A3A, #123A3F)', imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-outerwear', name: 'OUTERWEAR', href: '/collections/outerwear', gradient: 'linear-gradient(135deg, #682C21, #090A0B)', imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-accessories', name: 'ACCESSORIES', href: '/shop?category=Accessories', gradient: 'linear-gradient(135deg, #C59A3A, #121416)', imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-sale', name: 'ARCHIVE SALE', href: '/shop?sale=true', badge: '-40%', gradient: 'linear-gradient(135deg, #C65A28, #682C21)', imageUrl: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-new', name: 'NEW DROPS', href: '/new-arrivals', badge: 'HOT', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-men', name: 'MEN', href: '/men', badge: 'DROPS', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-women', name: 'WOMEN', href: '/women', badge: 'NEW', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-streetwear', name: 'STREETWEAR', href: '/collections/streetwear', badge: 'POPULAR', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-essentials', name: 'ESSENTIALS', href: '/collections/essentials', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-denim', name: 'DENIM', href: '/collections/denim', badge: 'SELVEDGE', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-outerwear', name: 'OUTERWEAR', href: '/collections/outerwear', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-accessories', name: 'ACCESSORIES', href: '/shop?category=Accessories', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-sale', name: 'ARCHIVE SALE', href: '/shop?sale=true', badge: '-40%', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=400' },
 ];
 
 export const asymmetricEditorialBlocks = [
@@ -1060,7 +1060,7 @@ export const asymmetricEditorialBlocks = [
     size: 'large-horizontal',
     aspectRatio: '16/9',
     imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=1200',
-    gradient: 'linear-gradient(135deg, #123A3F 0%, #090A0B 60%, #182A3A 100%)',
+    gradient: '#FFFFFF',
     label: 'EDITORIAL CAMPAIGN — 16:9',
     location: 'LOOKBOOK / VOL. 04',
     coordinates: '28.6139° N, 77.2090° E'
@@ -1073,7 +1073,7 @@ export const asymmetricEditorialBlocks = [
     size: 'small-vertical',
     aspectRatio: '4/5',
     imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=800',
-    gradient: 'linear-gradient(135deg, #182A3A 0%, #121416 70%, #090A0B 100%)',
+    gradient: '#FFFFFF',
     label: 'DENIM EDIT — 4:5',
     location: 'ARCHIVE 02',
     coordinates: '34.6551° N, 133.9195° E'
@@ -1086,7 +1086,7 @@ export const asymmetricEditorialBlocks = [
     size: 'small-vertical',
     aspectRatio: '4/5',
     imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=800',
-    gradient: 'linear-gradient(135deg, #682C21 0%, #1B1F22 65%, #090A0B 100%)',
+    gradient: '#FFFFFF',
     label: 'KNIT EDIT — 4:5',
     location: 'AUTUMN / 26',
     coordinates: '19.0760° N, 72.8777° E'
@@ -1099,7 +1099,7 @@ export const asymmetricEditorialBlocks = [
     size: 'large-vertical',
     aspectRatio: '3/4',
     imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=800',
-    gradient: 'linear-gradient(135deg, #C65A28 0%, #123A3F 50%, #090A0B 100%)',
+    gradient: '#FFFFFF',
     label: 'LIMITED CAPSULE — 3:4',
     location: 'RUNWAY 01',
     coordinates: '35.6762° N, 139.6503° E'
@@ -1112,7 +1112,7 @@ export const asymmetricEditorialBlocks = [
     size: 'large-horizontal',
     aspectRatio: '16/9',
     imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=1200',
-    gradient: 'linear-gradient(135deg, #1B1F22 0%, #121416 60%, #682C21 100%)',
+    gradient: '#FFFFFF',
     label: 'STUDIO ARCHIVE — 16:9',
     location: 'SERIES 03',
     coordinates: '12.9716° N, 77.5946° E'

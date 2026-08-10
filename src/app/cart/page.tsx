@@ -47,7 +47,7 @@ export default function CartPage() {
 
   const handleMoveToWishlist = (item: (typeof items)[0]) => {
     toggleWishlist(item.product);
-    removeItem(item.product.id, item.selectedColor.name, item.selectedSize);
+    removeItem(item.product.id, item.selectedSize, item.selectedColor.name);
     showToast(`Moved ${item.product.name} to Wishlist`, 'info');
   };
 
@@ -55,14 +55,14 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="bg-[#090A0B] text-white min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-20 select-none">
-        <div className="w-16 h-16 rounded-full bg-[#121416] border border-white/10 flex items-center justify-center mb-6">
-          <ShoppingBag className="w-8 h-8 text-white/40" />
+      <div className="bg-[#F7F7F5] text-[#111315] min-h-[70vh] flex flex-col items-center justify-center text-center px-4 py-20 select-none">
+        <div className="w-16 h-16 rounded-full bg-white border border-black/10 flex items-center justify-center mb-6 shadow-sm">
+          <ShoppingBag className="w-8 h-8 text-[#757A82]" />
         </div>
-        <h1 className="display-md text-white font-primary font-bold uppercase tracking-tight mb-2">
+        <h1 className="display-md text-[#111315] font-primary font-bold uppercase tracking-tight mb-2">
           YOUR BAG IS CURRENTLY EMPTY
         </h1>
-        <p className="text-xs sm:text-sm font-secondary text-white/60 max-w-md mb-8">
+        <p className="text-xs sm:text-sm font-secondary text-[#4A4E54] max-w-md mb-8">
           Explore our seasonal drops, raw Japanese selvedge denim, or technical outerwear pieces.
         </p>
         <div className="flex gap-4">
@@ -78,47 +78,47 @@ export default function CartPage() {
   }
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-screen pb-20 select-none">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-screen pb-20 select-none">
       {/* Header */}
-      <div className="border-b border-white/10 bg-[#121416]/40 py-8">
-        <div className="layout-container flex items-center justify-between">
+      <div className="border-b border-black/10 bg-white py-8">
+        <div className="vostra-container flex items-center justify-between">
           <div>
-            <div className="text-xs font-mono text-[#1ECAD3] tracking-widest uppercase font-bold">
+            <div className="text-xs font-mono text-[#0E6068] tracking-widest uppercase font-bold">
               ORDER RECONCILIATION
             </div>
-            <h1 className="heading-xl text-white font-primary font-bold uppercase tracking-tight">
+            <h1 className="heading-xl text-[#111315] font-primary font-bold uppercase tracking-tight">
               SHOPPING BAG ({totalItems} ITEMS)
             </h1>
           </div>
           <button
             onClick={clearCart}
-            className="text-xs font-mono text-white/40 hover:text-[#C65A28] uppercase underline"
+            className="text-xs font-mono text-[#757A82] hover:text-[#C65A28] uppercase underline font-bold"
           >
             CLEAR BAG
           </button>
         </div>
       </div>
 
-      <div className="layout-container pt-8">
+      <div className="vostra-container pt-8">
         {/* Free Shipping Meter Banner */}
-        <div className="p-4 bg-[#121416] border border-white/10 rounded-sm mb-8">
+        <div className="p-4 bg-white border border-black/10 rounded-sm mb-8 shadow-sm">
           {amountNeededForFreeShipping > 0 ? (
             <div className="space-y-2">
               <div className="flex items-center justify-between text-xs font-mono">
-                <span className="text-white/80">
+                <span className="text-[#4A4E54]">
                   ADD ₹{amountNeededForFreeShipping.toLocaleString('en-IN')} MORE TO UNLOCK COMPLIMENTARY EXPRESS AIR SHIPPING
                 </span>
-                <span className="text-[#1ECAD3] font-bold">{shippingProgress}%</span>
+                <span className="text-[#0E6068] font-bold">{shippingProgress}%</span>
               </div>
-              <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+              <div className="w-full h-1.5 bg-black/10 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-[#123A3F] via-[#1ECAD3] to-[#C65A28] transition-all duration-500"
+                  className="h-full bg-[#0E6068] transition-all duration-500"
                   style={{ width: `${shippingProgress}%` }}
                 />
               </div>
             </div>
           ) : (
-            <div className="flex items-center gap-2 text-xs font-mono text-[#1ECAD3] font-bold">
+            <div className="flex items-center gap-2 text-xs font-mono text-[#0E6068] font-bold">
               <Sparkles className="w-4 h-4" />
               <span>COMPLIMENTARY EXPRESS AIR SHIPPING UNLOCKED FOR THIS ORDER</span>
             </div>
@@ -132,132 +132,127 @@ export default function CartPage() {
             {items.map((item) => (
               <div
                 key={`${item.product.id}-${item.selectedColor.name}-${item.selectedSize}`}
-                className="p-4 sm:p-6 bg-[#121416] border border-white/10 rounded-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6"
+                className="p-4 sm:p-6 bg-white border border-black/10 rounded-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 sm:gap-6 shadow-sm"
               >
                 {/* Product Thumbnail and Info */}
                 <div className="flex items-center gap-4 flex-1">
                   <div className="w-20 sm:w-24 flex-shrink-0">
-                    <MediaPlaceholder
-                      type="product"
-                      aspectRatio="4/5"
-                      label={item.product.category}
-                      gradient={item.product.placeholderGradient}
-                      showCoordinates={false}
-                      showGridLines={false}
-                      className="w-full rounded-sm"
+                    <img
+                      src={item.product.imageUrl || 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=800'}
+                      alt={item.product.name}
+                      className="w-full h-24 object-cover object-center rounded-sm border border-black/10"
                     />
                   </div>
 
                   <div className="space-y-1">
-                    <span className="text-[10px] font-mono text-white/50 uppercase tracking-widest">
+                    <span className="text-[10px] font-mono text-[#757A82] uppercase tracking-widest">
                       {item.product.outfitCategory}
                     </span>
                     <Link
                       href={`/products/${item.product.slug}`}
-                      className="font-primary text-sm sm:text-base font-bold uppercase text-white hover:text-[#1ECAD3] transition-colors block"
+                      className="font-primary text-sm sm:text-base font-bold uppercase text-[#111315] hover:text-[#0E6068] transition-colors block"
                     >
                       {item.product.name}
                     </Link>
-                    <div className="flex items-center gap-3 text-xs font-mono text-white/70 pt-1">
-                      <span>SIZE: <strong className="text-white">{item.selectedSize}</strong></span>
-                      <span>•</span>
+
+                    <div className="flex items-center gap-3 text-xs font-mono text-[#757A82]">
                       <span className="flex items-center gap-1">
                         <span
-                          className="w-2.5 h-2.5 rounded-full inline-block border border-white/30"
+                          className="w-2.5 h-2.5 rounded-full border border-black/20"
                           style={{ backgroundColor: item.selectedColor.hex }}
                         />
-                        {item.selectedColor.name}
+                        <span>{item.selectedColor.name}</span>
                       </span>
+                      <span>•</span>
+                      <span>SIZE: {item.selectedSize}</span>
+                    </div>
+
+                    <div className="pt-2 flex items-center gap-4 text-xs font-mono">
+                      <button
+                        onClick={() => handleMoveToWishlist(item)}
+                        className="text-[#757A82] hover:text-[#111315] flex items-center gap-1 uppercase"
+                      >
+                        <Heart className="w-3 h-3" />
+                        <span>SAVE TO WISHLIST</span>
+                      </button>
+                      <button
+                        onClick={() => removeItem(item.product.id, item.selectedSize, item.selectedColor.name)}
+                        className="text-[#757A82] hover:text-[#C65A28] flex items-center gap-1 uppercase"
+                      >
+                        <Trash2 className="w-3 h-3" />
+                        <span>REMOVE</span>
+                      </button>
                     </div>
                   </div>
                 </div>
 
-                {/* Actions: Quantity, Price, Move to Wishlist, Remove */}
-                <div className="w-full sm:w-auto flex items-center justify-between sm:justify-end gap-6 pt-2 sm:pt-0 border-t sm:border-t-0 border-white/10">
-                  {/* Quantity */}
-                  <div className="flex items-center border border-white/20 rounded-sm font-mono text-xs bg-black/40">
+                {/* Quantity and Line Total */}
+                <div className="flex sm:flex-col items-center sm:items-end justify-between w-full sm:w-auto gap-4 pt-2 sm:pt-0 border-t sm:border-t-0 border-black/10">
+                  <div className="flex items-center border border-black/15 rounded-sm bg-[#F7F7F5] font-mono text-xs">
                     <button
                       onClick={() =>
                         updateQuantity(
                           item.product.id,
-                          item.selectedColor.name,
                           item.selectedSize,
+                          item.selectedColor.name,
                           item.quantity - 1
                         )
                       }
-                      className="px-2.5 py-1 text-white/60 hover:text-white"
+                      className="px-2.5 py-1 text-[#757A82] hover:text-[#111315]"
                     >
                       -
                     </button>
-                    <span className="px-3 font-bold text-white">{item.quantity}</span>
+                    <span className="px-3 font-bold text-[#111315]">{item.quantity}</span>
                     <button
                       onClick={() =>
                         updateQuantity(
                           item.product.id,
-                          item.selectedColor.name,
                           item.selectedSize,
+                          item.selectedColor.name,
                           item.quantity + 1
                         )
                       }
-                      className="px-2.5 py-1 text-white/60 hover:text-white"
+                      className="px-2.5 py-1 text-[#757A82] hover:text-[#111315]"
                     >
                       +
                     </button>
                   </div>
 
-                  {/* Subtotal */}
                   <div className="text-right">
-                    <span className="font-mono text-sm sm:text-base font-bold text-white">
+                    <div className="text-base sm:text-lg font-mono font-bold text-[#111315]">
                       ₹{(item.product.price * item.quantity).toLocaleString('en-IN')}
-                    </span>
-                  </div>
-
-                  {/* Quick Action Icons */}
-                  <div className="flex items-center gap-2">
-                    <button
-                      onClick={() => handleMoveToWishlist(item)}
-                      title="Move to Wishlist"
-                      className="p-1.5 text-white/40 hover:text-[#C65A28] transition-colors"
-                      aria-label="Move to Wishlist"
-                    >
-                      <Heart className="w-4 h-4" />
-                    </button>
-                    <button
-                      onClick={() =>
-                        removeItem(item.product.id, item.selectedColor.name, item.selectedSize)
-                      }
-                      title="Remove Item"
-                      className="p-1.5 text-white/40 hover:text-[#C65A28] transition-colors"
-                      aria-label="Remove Item"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+                    </div>
+                    {item.quantity > 1 && (
+                      <span className="text-[10px] font-mono text-[#757A82]">
+                        (₹{item.product.price.toLocaleString('en-IN')} each)
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Order Summary & Checkout Box (4 cols) */}
-          <div className="lg:col-span-4">
-            <div className="p-6 bg-[#121416] border border-white/15 rounded-sm space-y-6 sticky top-24">
-              <h3 className="font-primary text-base font-bold uppercase tracking-wider text-white border-b border-white/10 pb-3">
-                ORDER BREAKDOWN
-              </h3>
+          {/* Order Summary Box (4 cols) */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="p-6 bg-white border border-black/10 rounded-sm space-y-6 shadow-sm">
+              <h2 className="heading-lg text-[#111315] font-primary font-bold uppercase tracking-tight">
+                ORDER SUMMARY
+              </h2>
 
               {/* Promo Code Form */}
-              <form onSubmit={handleApplyPromo} className="space-y-1.5">
+              <form onSubmit={handleApplyPromo} className="space-y-2">
                 <div className="flex gap-2">
                   <input
                     type="text"
                     value={promoInput}
                     onChange={(e) => setPromoInput(e.target.value)}
-                    placeholder="PROMO CODE (VOSTRA10)"
-                    className="flex-1 bg-black/50 border border-white/15 px-3 py-2.5 text-xs font-mono uppercase tracking-wider text-white placeholder-white/30 focus:outline-none focus:border-white rounded-sm"
+                    placeholder="PROMO CODE"
+                    className="flex-1 bg-[#F7F7F5] border border-black/15 px-3 py-2 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] focus:outline-none focus:border-black rounded-sm"
                   />
                   <button
                     type="submit"
-                    className="px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white text-xs font-mono uppercase tracking-wider border border-white/15 rounded-sm transition-colors"
+                    className="px-4 py-2 bg-[#111315] hover:bg-black text-white text-xs font-mono uppercase rounded-sm transition-colors"
                   >
                     APPLY
                   </button>
@@ -266,12 +261,12 @@ export default function CartPage() {
                   <p className="text-[10px] font-mono text-[#C65A28]">{promoError}</p>
                 )}
                 {appliedPromo && (
-                  <div className="flex items-center justify-between text-[11px] font-mono text-[#1ECAD3] bg-[#123A3F]/30 p-2 rounded-sm border border-[#1ECAD3]/30">
-                    <span>COUPON {appliedPromo} ACTIVE</span>
+                  <div className="flex items-center justify-between text-xs font-mono text-[#0E6068] bg-[#E2ECEB] px-3 py-1.5 rounded-sm border border-[#0E6068]/30">
+                    <span>CODE "{appliedPromo}" APPLIED</span>
                     <button
                       type="button"
                       onClick={removePromoCode}
-                      className="text-white/60 hover:text-white underline"
+                      className="text-[#757A82] hover:text-[#111315] underline"
                     >
                       REMOVE
                     </button>
@@ -279,50 +274,52 @@ export default function CartPage() {
                 )}
               </form>
 
-              {/* Line Item Breakdown */}
-              <div className="space-y-2 text-xs font-mono border-t border-white/10 pt-4">
-                <div className="flex justify-between text-white/60">
-                  <span>CART SUBTOTAL</span>
+              {/* Price Calculations */}
+              <div className="space-y-2.5 text-xs font-mono border-t border-black/10 pt-4">
+                <div className="flex justify-between text-[#757A82]">
+                  <span>SUBTOTAL</span>
                   <span>₹{subtotal.toLocaleString('en-IN')}</span>
                 </div>
+
                 {discount > 0 && (
-                  <div className="flex justify-between text-[#1ECAD3]">
-                    <span>PROMO SAVINGS</span>
+                  <div className="flex justify-between text-[#0E6068] font-bold">
+                    <span>PROMO DISCOUNT (10%)</span>
                     <span>-₹{discount.toLocaleString('en-IN')}</span>
                   </div>
                 )}
-                <div className="flex justify-between text-white/60">
+
+                <div className="flex justify-between text-[#757A82]">
                   <span>EXPRESS AIR SHIPPING</span>
-                  <span>{shippingFee === 0 ? 'FREE' : `₹${shippingFee}`}</span>
+                  <span>{shippingFee === 0 ? 'COMPLIMENTARY' : `₹${shippingFee}`}</span>
                 </div>
-                <div className="flex justify-between text-sm sm:text-base font-bold text-white pt-2 border-t border-white/10">
-                  <span>ESTIMATED TOTAL</span>
-                  <span className="font-primary text-lg sm:text-xl">
+
+                <div className="flex justify-between text-sm font-bold text-[#111315] pt-3 border-t border-black/10">
+                  <span>TOTAL DUE</span>
+                  <span className="text-lg font-primary">
                     ₹{finalTotal.toLocaleString('en-IN')}
                   </span>
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="space-y-3 pt-2">
-                <Link
-                  href="/checkout"
-                  className="w-full btn-primary text-xs py-4 flex items-center justify-center gap-2 font-bold"
-                >
-                  <span>PROCEED TO CHECKOUT</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/shop"
-                  className="w-full btn-secondary text-xs py-3 flex items-center justify-center text-center block"
-                >
-                  CONTINUE SHOPPING
-                </Link>
-              </div>
+              {/* Checkout CTA */}
+              <Link
+                href="/checkout"
+                className="w-full btn-primary flex items-center justify-center gap-2 py-4"
+              >
+                <span>PROCEED TO CHECKOUT</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
 
-              <div className="flex items-center justify-center gap-2 text-[10px] font-mono text-white/40 pt-2 border-t border-white/10">
-                <ShieldCheck className="w-4 h-4 text-[#1ECAD3]" />
-                <span>ENCRYPTED 256-BIT PAYMENT PROTECTION</span>
+              {/* Assurances */}
+              <div className="space-y-2 pt-4 border-t border-black/10 text-[11px] font-mono text-[#757A82]">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-4 h-4 text-[#0E6068]" />
+                  <span>256-BIT ENCRYPTED RAZORPAY CHECKOUT</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#0E6068]" />
+                  <span>7-DAY UNCONDITIONAL FIT RETURNS</span>
+                </div>
               </div>
             </div>
           </div>

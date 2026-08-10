@@ -24,15 +24,15 @@ export const SortDropdown: React.FC<SortDropdownProps> = ({ currentSort, onSortC
       <select
         value={currentSort}
         onChange={(e) => onSortChange(e.target.value as SortOption)}
-        className="appearance-none bg-[#121416] border border-white/15 hover:border-white/40 text-white font-mono text-xs uppercase tracking-wider py-2 pl-3.5 pr-8 rounded-sm focus:outline-none focus:border-white cursor-pointer transition-colors"
+        className="appearance-none bg-white border border-black/15 hover:border-black/40 text-[#111315] font-mono text-xs uppercase tracking-wider py-2 pl-3.5 pr-8 rounded-sm focus:outline-none focus:border-black cursor-pointer transition-colors shadow-sm"
       >
         {options.map((opt) => (
-          <option key={opt.value} value={opt.value} className="bg-[#121416] text-white">
+          <option key={opt.value} value={opt.value} className="bg-white text-[#111315]">
             SORT: {opt.label}
           </option>
         ))}
       </select>
-      <ChevronDown className="absolute right-2.5 w-3.5 h-3.5 text-white/50 pointer-events-none" />
+      <ChevronDown className="absolute right-2.5 w-3.5 h-3.5 text-[#757A82] pointer-events-none" />
     </div>
   );
 };

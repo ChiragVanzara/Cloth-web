@@ -4,18 +4,17 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
 import { useToast } from '@/context/ToastContext';
-import { MediaPlaceholder } from '@/components/ui/MediaPlaceholder';
 import {
+  Lock,
+  ArrowLeft,
+  ArrowRight,
   ShieldCheck,
+  CheckCircle2,
   Truck,
   CreditCard,
-  QrCode,
   Building2,
   Banknote,
-  CheckCircle2,
-  ArrowRight,
-  ArrowLeft,
-  Lock,
+  QrCode,
 } from 'lucide-react';
 
 export default function CheckoutPage() {
@@ -24,34 +23,30 @@ export default function CheckoutPage() {
 
   const [step, setStep] = useState<'details' | 'payment' | 'confirmation'>('details');
 
-  // Form Fields
   const [formData, setFormData] = useState({
     email: '',
     phone: '',
     fullName: '',
     street: '',
-    apartment: '',
     city: 'Mumbai',
     state: 'Maharashtra',
     pincode: '400001',
     deliveryMethod: 'express',
     paymentMethod: 'upi',
     upiId: '',
-    cardNumber: '',
-    cardExpiry: '',
-    cardCvv: '',
   });
 
   const [orderNumber, setOrderNumber] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleProceedToPayment = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.email || !formData.phone || !formData.fullName || !formData.street) {
-      showToast('Please complete all shipping address fields', 'error');
+    if (!formData.fullName || !formData.email || !formData.street) {
+      showToast('Please complete all required address fields', 'error');
       return;
     }
     setStep('payment');
@@ -59,7 +54,7 @@ export default function CheckoutPage() {
 
   const handlePlaceOrder = (e: React.FormEvent) => {
     e.preventDefault();
-    const generatedOrderNum = 'VOS-' + Math.floor(100000 + Math.random() * 900000);
+    const generatedOrderNum = `VST-${Math.floor(100000 + Math.random() * 900000)}`;
     setOrderNumber(generatedOrderNum);
     setStep('confirmation');
     clearCart();
@@ -68,41 +63,41 @@ export default function CheckoutPage() {
 
   if (step === 'confirmation') {
     return (
-      <div className="bg-[#090A0B] text-white min-h-screen py-20 select-none">
-        <div className="layout-container max-w-2xl mx-auto text-center space-y-6 bg-[#121416] p-8 sm:p-12 border border-white/15 rounded-sm shadow-2xl">
-          <div className="w-16 h-16 rounded-full bg-[#123A3F] border border-[#1ECAD3]/40 flex items-center justify-center mx-auto text-[#1ECAD3]">
+      <div className="bg-[#F7F7F5] text-[#111315] min-h-screen py-20 select-none">
+        <div className="vostra-container max-w-2xl mx-auto text-center space-y-6 bg-white p-8 sm:p-12 border border-black/10 rounded-sm shadow-xl">
+          <div className="w-16 h-16 rounded-full bg-[#E2ECEB] border border-[#0E6068]/40 flex items-center justify-center mx-auto text-[#0E6068]">
             <CheckCircle2 className="w-10 h-10" />
           </div>
 
           <div className="space-y-2">
-            <span className="text-xs font-mono text-[#1ECAD3] uppercase font-bold tracking-widest">
+            <span className="text-xs font-mono text-[#0E6068] uppercase font-bold tracking-widest">
               ORDER RECONCILED & DISPATCH READY
             </span>
-            <h1 className="heading-xl text-white font-primary font-bold uppercase tracking-tight">
+            <h1 className="heading-xl text-[#111315] font-primary font-bold uppercase tracking-tight">
               THANK YOU, {formData.fullName.toUpperCase()}!
             </h1>
-            <p className="text-xs sm:text-sm font-secondary text-white/70">
+            <p className="text-xs sm:text-sm font-secondary text-[#4A4E54] leading-relaxed">
               We have received your order. A confirmation email and tracking link have been dispatched to{' '}
-              <strong className="text-white">{formData.email || 'your email'}</strong>.
+              <strong className="text-[#111315]">{formData.email || 'your email'}</strong>.
             </p>
           </div>
 
-          <div className="p-4 bg-[#090A0B] border border-white/10 rounded-sm text-left font-mono text-xs space-y-2">
-            <div className="flex justify-between text-white/60">
+          <div className="p-4 bg-[#F7F7F5] border border-black/10 rounded-sm text-left font-mono text-xs space-y-2">
+            <div className="flex justify-between text-[#757A82]">
               <span>ORDER REFERENCE:</span>
-              <strong className="text-white">{orderNumber}</strong>
+              <strong className="text-[#111315]">{orderNumber}</strong>
             </div>
-            <div className="flex justify-between text-white/60">
+            <div className="flex justify-between text-[#757A82]">
               <span>DELIVERY ADDRESS:</span>
-              <span className="text-white truncate max-w-xs">{formData.street}, {formData.city}</span>
+              <span className="text-[#111315] truncate max-w-xs">{formData.street}, {formData.city}</span>
             </div>
-            <div className="flex justify-between text-white/60">
+            <div className="flex justify-between text-[#757A82]">
               <span>PAYMENT STATUS:</span>
-              <span className="text-[#1ECAD3] font-bold">PREPAID VIA {formData.paymentMethod.toUpperCase()}</span>
+              <span className="text-[#0E6068] font-bold">PREPAID VIA {formData.paymentMethod.toUpperCase()}</span>
             </div>
-            <div className="flex justify-between text-white/60 pt-2 border-t border-white/10">
+            <div className="flex justify-between text-[#757A82] pt-2 border-t border-black/10">
               <span>TOTAL PAID:</span>
-              <strong className="text-white text-sm">₹{finalTotal.toLocaleString('en-IN')}</strong>
+              <strong className="text-[#111315] text-sm">₹{finalTotal.toLocaleString('en-IN')}</strong>
             </div>
           </div>
 
@@ -120,40 +115,40 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="bg-[#090A0B] text-white min-h-screen pb-20 select-none">
+    <div className="bg-[#F7F7F5] text-[#111315] min-h-screen pb-20 select-none">
       {/* Checkout Breadcrumb Header */}
-      <div className="border-b border-white/10 bg-[#121416]/40 py-6">
-        <div className="layout-container flex items-center justify-between">
+      <div className="border-b border-black/10 bg-white py-6">
+        <div className="vostra-container flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/cart" className="p-1 text-white/60 hover:text-white">
+            <Link href="/cart" className="p-1 text-[#757A82] hover:text-[#111315]">
               <ArrowLeft className="w-5 h-5" />
             </Link>
-            <h1 className="font-primary text-lg sm:text-xl font-bold uppercase tracking-tight">
+            <h1 className="font-primary text-lg sm:text-xl font-bold uppercase tracking-tight text-[#111315]">
               EXPRESS CHECKOUT
             </h1>
           </div>
 
-          <div className="flex items-center gap-2 text-xs font-mono text-white/60">
-            <Lock className="w-3.5 h-3.5 text-[#1ECAD3]" />
+          <div className="flex items-center gap-2 text-xs font-mono text-[#0E6068] font-bold">
+            <Lock className="w-3.5 h-3.5" />
             <span>256-BIT ENCRYPTED</span>
           </div>
         </div>
       </div>
 
-      <div className="layout-container pt-8">
+      <div className="vostra-container pt-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Main Form Area (7 cols) */}
           <div className="lg:col-span-7 space-y-8">
             {step === 'details' ? (
               <form onSubmit={handleProceedToPayment} className="space-y-6">
                 {/* 1. Contact Information */}
-                <div className="p-6 bg-[#121416] border border-white/10 rounded-sm space-y-4">
-                  <h3 className="text-xs font-mono font-bold tracking-widest text-[#1ECAD3] uppercase">
+                <div className="p-6 bg-white border border-black/10 rounded-sm space-y-4 shadow-sm">
+                  <h3 className="text-xs font-mono font-bold tracking-widest text-[#0E6068] uppercase">
                     01. CONTACT DETAILS
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                      <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                         EMAIL ADDRESS *
                       </label>
                       <input
@@ -163,11 +158,11 @@ export default function CheckoutPage() {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="you@domain.com"
-                        className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                        className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                       />
                     </div>
                     <div>
-                      <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                      <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                         PHONE NUMBER (FOR SMS TRACKING) *
                       </label>
                       <input
@@ -177,20 +172,20 @@ export default function CheckoutPage() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+91 98765 43210"
-                        className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                        className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                       />
                     </div>
                   </div>
                 </div>
 
                 {/* 2. Shipping Address */}
-                <div className="p-6 bg-[#121416] border border-white/10 rounded-sm space-y-4">
-                  <h3 className="text-xs font-mono font-bold tracking-widest text-[#1ECAD3] uppercase">
+                <div className="p-6 bg-white border border-black/10 rounded-sm space-y-4 shadow-sm">
+                  <h3 className="text-xs font-mono font-bold tracking-widest text-[#0E6068] uppercase">
                     02. DELIVERY ADDRESS (INDIA)
                   </h3>
                   <div className="space-y-4">
                     <div>
-                      <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                      <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                         FULL NAME *
                       </label>
                       <input
@@ -200,12 +195,12 @@ export default function CheckoutPage() {
                         value={formData.fullName}
                         onChange={handleInputChange}
                         placeholder="e.g. Sureshkumar Vanzara"
-                        className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                        className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                      <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                         STREET ADDRESS & BUILDING *
                       </label>
                       <input
@@ -215,13 +210,13 @@ export default function CheckoutPage() {
                         value={formData.street}
                         onChange={handleInputChange}
                         placeholder="Flat / Floor / Street Name"
-                        className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                        className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                       />
                     </div>
 
                     <div className="grid grid-cols-3 gap-3">
                       <div>
-                        <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                        <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                           CITY *
                         </label>
                         <input
@@ -230,11 +225,11 @@ export default function CheckoutPage() {
                           name="city"
                           value={formData.city}
                           onChange={handleInputChange}
-                          className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                          className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] rounded-sm focus:outline-none focus:border-black"
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                        <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                           STATE *
                         </label>
                         <input
@@ -243,11 +238,11 @@ export default function CheckoutPage() {
                           name="state"
                           value={formData.state}
                           onChange={handleInputChange}
-                          className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                          className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] rounded-sm focus:outline-none focus:border-black"
                         />
                       </div>
                       <div>
-                        <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                        <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                           PINCODE *
                         </label>
                         <input
@@ -256,7 +251,7 @@ export default function CheckoutPage() {
                           name="pincode"
                           value={formData.pincode}
                           onChange={handleInputChange}
-                          className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                          className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] rounded-sm focus:outline-none focus:border-black"
                         />
                       </div>
                     </div>
@@ -264,16 +259,16 @@ export default function CheckoutPage() {
                 </div>
 
                 {/* 3. Delivery Method */}
-                <div className="p-6 bg-[#121416] border border-white/10 rounded-sm space-y-4">
-                  <h3 className="text-xs font-mono font-bold tracking-widest text-[#1ECAD3] uppercase">
+                <div className="p-6 bg-white border border-black/10 rounded-sm space-y-4 shadow-sm">
+                  <h3 className="text-xs font-mono font-bold tracking-widest text-[#0E6068] uppercase">
                     03. SHIPPING SPEED
                   </h3>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <label
                       className={`flex items-center justify-between p-3.5 rounded-sm border cursor-pointer ${
                         formData.deliveryMethod === 'express'
-                          ? 'border-[#1ECAD3] bg-[#123A3F]/20 text-white'
-                          : 'border-white/10 bg-[#090A0B] text-white/60'
+                          ? 'border-[#0E6068] bg-[#E2ECEB] text-[#111315]'
+                          : 'border-black/10 bg-[#F7F7F5] text-[#4A4E54]'
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -283,21 +278,21 @@ export default function CheckoutPage() {
                           value="express"
                           checked={formData.deliveryMethod === 'express'}
                           onChange={handleInputChange}
-                          className="accent-[#1ECAD3]"
+                          className="accent-[#0E6068]"
                         />
                         <div>
                           <div className="text-xs font-mono font-bold uppercase">STANDARD AIR EXPRESS</div>
-                          <div className="text-[10px] text-white/50">2-4 BUSINESS DAYS</div>
+                          <div className="text-[10px] text-[#757A82]">2-4 BUSINESS DAYS</div>
                         </div>
                       </div>
-                      <span className="font-mono text-xs font-bold text-[#1ECAD3]">FREE</span>
+                      <span className="font-mono text-xs font-bold text-[#0E6068]">FREE</span>
                     </label>
 
                     <label
                       className={`flex items-center justify-between p-3.5 rounded-sm border cursor-pointer ${
                         formData.deliveryMethod === 'priority'
-                          ? 'border-[#C65A28] bg-[#682C21]/20 text-white'
-                          : 'border-white/10 bg-[#090A0B] text-white/60'
+                          ? 'border-[#C65A28] bg-[#F5EAE6] text-[#111315]'
+                          : 'border-black/10 bg-[#F7F7F5] text-[#4A4E54]'
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -311,10 +306,10 @@ export default function CheckoutPage() {
                         />
                         <div>
                           <div className="text-xs font-mono font-bold uppercase">NEXT-DAY METRO DROP</div>
-                          <div className="text-[10px] text-white/50">GUARANTEED 24 HOURS</div>
+                          <div className="text-[10px] text-[#757A82]">GUARANTEED 24 HOURS</div>
                         </div>
                       </div>
-                      <span className="font-mono text-xs font-bold text-white">₹199</span>
+                      <span className="font-mono text-xs font-bold text-[#111315]">₹199</span>
                     </label>
                   </div>
                 </div>
@@ -330,15 +325,15 @@ export default function CheckoutPage() {
             ) : (
               /* Payment Step */
               <form onSubmit={handlePlaceOrder} className="space-y-6">
-                <div className="p-6 bg-[#121416] border border-white/10 rounded-sm space-y-4">
+                <div className="p-6 bg-white border border-black/10 rounded-sm space-y-4 shadow-sm">
                   <div className="flex items-center justify-between">
-                    <h3 className="text-xs font-mono font-bold tracking-widest text-[#1ECAD3] uppercase">
+                    <h3 className="text-xs font-mono font-bold tracking-widest text-[#0E6068] uppercase">
                       04. PAYMENT ARCHITECTURE
                     </h3>
                     <button
                       type="button"
                       onClick={() => setStep('details')}
-                      className="text-[11px] font-mono text-white/60 hover:text-white underline uppercase"
+                      className="text-[11px] font-mono text-[#757A82] hover:text-[#111315] underline uppercase"
                     >
                       EDIT ADDRESS
                     </button>
@@ -361,8 +356,8 @@ export default function CheckoutPage() {
                           onClick={() => setFormData({ ...formData, paymentMethod: pm.id })}
                           className={`p-3 rounded-sm border flex flex-col items-center gap-2 text-xs font-mono uppercase transition-all ${
                             isSelected
-                              ? 'bg-white text-black font-bold border-white shadow-lg'
-                              : 'bg-[#090A0B] text-white/70 border-white/10 hover:border-white/30'
+                              ? 'bg-[#111315] text-white font-bold border-[#111315] shadow-md'
+                              : 'bg-[#F7F7F5] text-[#4A4E54] border-black/10 hover:border-black/30'
                           }`}
                         >
                           <Icon className="w-5 h-5" />
@@ -374,8 +369,8 @@ export default function CheckoutPage() {
 
                   {/* UPI Inputs */}
                   {formData.paymentMethod === 'upi' && (
-                    <div className="pt-4 border-t border-white/10 space-y-3">
-                      <label className="block text-[11px] font-mono text-white/60 uppercase">
+                    <div className="pt-4 border-t border-black/10 space-y-3">
+                      <label className="block text-[11px] font-mono text-[#4A4E54] uppercase">
                         ENTER UPI ID (GPay, PhonePe, Paytm, CRED)
                       </label>
                       <input
@@ -384,9 +379,9 @@ export default function CheckoutPage() {
                         value={formData.upiId}
                         onChange={handleInputChange}
                         placeholder="username@okhdfcbank"
-                        className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                        className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                       />
-                      <p className="text-[10px] font-mono text-[#1ECAD3]">
+                      <p className="text-[10px] font-mono text-[#0E6068]">
                         A payment prompt will be dispatched instantly to your UPI application.
                       </p>
                     </div>
@@ -394,28 +389,28 @@ export default function CheckoutPage() {
 
                   {/* Card Inputs */}
                   {formData.paymentMethod === 'card' && (
-                    <div className="pt-4 border-t border-white/10 space-y-3">
+                    <div className="pt-4 border-t border-black/10 space-y-3">
                       <div>
-                        <label className="block text-[11px] font-mono text-white/60 uppercase mb-1">
+                        <label className="block text-[11px] font-mono text-[#4A4E54] uppercase mb-1">
                           CARD NUMBER
                         </label>
                         <input
                           type="text"
                           placeholder="4532 •••• •••• 8892"
-                          className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                          className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                         />
                       </div>
                       <div className="grid grid-cols-2 gap-3">
                         <input
                           type="text"
                           placeholder="MM / YY"
-                          className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                          className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                         />
                         <input
                           type="password"
                           placeholder="CVV"
                           maxLength={4}
-                          className="w-full bg-[#090A0B] border border-white/15 px-3.5 py-2.5 text-xs font-mono uppercase text-white rounded-sm focus:outline-none focus:border-white"
+                          className="w-full bg-[#F7F7F5] border border-black/15 px-3.5 py-2.5 text-xs font-mono uppercase text-[#111315] placeholder-[#757A82] rounded-sm focus:outline-none focus:border-black"
                         />
                       </div>
                     </div>
@@ -423,7 +418,7 @@ export default function CheckoutPage() {
 
                   {/* COD Notice */}
                   {formData.paymentMethod === 'cod' && (
-                    <div className="pt-4 border-t border-white/10 text-xs font-mono text-white/70 space-y-1">
+                    <div className="pt-4 border-t border-black/10 text-xs font-mono text-[#4A4E54] space-y-1">
                       <p>• Verification OTP will be sent to +91 {formData.phone || 'your phone'} before drop delivery.</p>
                       <p>• Exact cash or UPI at doorstep accepted.</p>
                     </div>
@@ -452,8 +447,8 @@ export default function CheckoutPage() {
 
           {/* Right Column: Order Summary (5 cols) */}
           <div className="lg:col-span-5">
-            <div className="p-6 bg-[#121416] border border-white/15 rounded-sm space-y-4 sticky top-24">
-              <h3 className="font-primary text-sm font-bold uppercase tracking-wider text-white border-b border-white/10 pb-3">
+            <div className="p-6 bg-white border border-black/15 rounded-sm space-y-4 sticky top-24 shadow-sm">
+              <h3 className="font-primary text-sm font-bold uppercase tracking-wider text-[#111315] border-b border-black/10 pb-3">
                 ORDER REVIEW ({items.length} ITEMS)
               </h3>
 
@@ -462,27 +457,24 @@ export default function CheckoutPage() {
                 {items.map((item) => (
                   <div
                     key={`${item.product.id}-${item.selectedColor.name}-${item.selectedSize}`}
-                    className="flex items-center gap-3 text-xs font-mono pb-3 border-b border-white/5"
+                    className="flex items-center gap-3 text-xs font-mono pb-3 border-b border-black/5"
                   >
-                    <div className="w-12 h-14 flex-shrink-0 rounded-sm overflow-hidden border border-white/10">
-                      <MediaPlaceholder
-                        type="thumbnail"
-                        aspectRatio="4/5"
-                        gradient={item.product.placeholderGradient}
-                        showCoordinates={false}
-                        showGridLines={false}
-                        className="w-full h-full"
+                    <div className="w-12 h-14 flex-shrink-0 rounded-sm overflow-hidden border border-black/10 bg-[#F7F7F5]">
+                      <img
+                        src={item.product.imageUrl || 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=800'}
+                        alt={item.product.name}
+                        className="w-full h-full object-cover object-center"
                       />
                     </div>
                     <div className="flex-1 min-w-0">
-                      <h4 className="text-white font-primary font-semibold truncate uppercase">
+                      <h4 className="text-[#111315] font-primary font-semibold truncate uppercase">
                         {item.product.name}
                       </h4>
-                      <p className="text-[10px] text-white/50">
+                      <p className="text-[10px] text-[#757A82]">
                         {item.selectedSize} • {item.selectedColor.name} • QTY {item.quantity}
                       </p>
                     </div>
-                    <span className="font-bold text-white">
+                    <span className="font-bold text-[#111315]">
                       ₹{(item.product.price * item.quantity).toLocaleString('en-IN')}
                     </span>
                   </div>
@@ -491,21 +483,21 @@ export default function CheckoutPage() {
 
               {/* Calculations */}
               <div className="space-y-2 text-xs font-mono pt-2">
-                <div className="flex justify-between text-white/60">
+                <div className="flex justify-between text-[#757A82]">
                   <span>SUBTOTAL</span>
                   <span>₹{subtotal.toLocaleString('en-IN')}</span>
                 </div>
                 {discount > 0 && (
-                  <div className="flex justify-between text-[#1ECAD3]">
+                  <div className="flex justify-between text-[#0E6068] font-bold">
                     <span>PROMO DISCOUNT</span>
                     <span>-₹{discount.toLocaleString('en-IN')}</span>
                   </div>
                 )}
-                <div className="flex justify-between text-white/60">
+                <div className="flex justify-between text-[#757A82]">
                   <span>EXPRESS SHIPPING</span>
                   <span>{shippingFee === 0 ? 'FREE' : `₹${shippingFee}`}</span>
                 </div>
-                <div className="flex justify-between text-sm sm:text-base font-bold text-white pt-2 border-t border-white/10">
+                <div className="flex justify-between text-sm sm:text-base font-bold text-[#111315] pt-2 border-t border-black/10">
                   <span>TOTAL DUE</span>
                   <span className="font-primary text-lg">₹{finalTotal.toLocaleString('en-IN')}</span>
                 </div>
