@@ -132,19 +132,19 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
         </h4>
         <div className="space-y-1">
           {allCategories.map((cat) => {
-            const isSelected = filters.category.includes(cat);
+            const isSelected = filters.category.includes(cat.id);
             return (
               <label
-                key={cat}
+                key={cat.id}
                 className="flex items-center justify-between py-1 cursor-pointer group text-xs font-secondary hover:text-[#111315]"
               >
                 <span className={isSelected ? 'text-[#111315] font-bold' : 'text-[#4A4E54]'}>
-                  {cat}
+                  {cat.name}
                 </span>
                 <input
                   type="checkbox"
                   checked={isSelected}
-                  onChange={() => toggleCategory(cat)}
+                  onChange={() => toggleCategory(cat.id)}
                   className="accent-[#111315] rounded-sm cursor-pointer"
                 />
               </label>

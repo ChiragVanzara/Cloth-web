@@ -6,8 +6,8 @@ import { CartItem, Product, ProductColor } from '@/types';
 interface CartContextType {
   items: CartItem[];
   addItem: (product: Product, selectedColor?: ProductColor, selectedSize?: string, quantity?: number) => void;
-  removeItem: (productId: string, colorName: string, size: string) => void;
-  updateQuantity: (productId: string, colorName: string, size: string, quantity: number) => void;
+  removeItem: (productId: string, arg2: string, arg3: string) => void;
+  updateQuantity: (productId: string, arg2: string, arg3: string, quantity: number) => void;
   clearCart: () => void;
   totalItems: number;
   subtotal: number;
@@ -20,6 +20,7 @@ interface CartContextType {
   amountNeededForFreeShipping: number;
   finalTotal: number;
   isCartDrawerOpen: boolean;
+  isCartOpen: boolean;
   setIsCartDrawerOpen: (open: boolean) => void;
   openCartDrawer: () => void;
   closeCartDrawer: () => void;
@@ -89,14 +90,14 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsCartDrawerOpen(true);
   };
 
-  const removeItem = (productId: string, colorName: string, size: string) => {
+  const removeItem = (productId: string, arg2: string, arg3: string) => {
     setItems((prev) =>
       prev.filter(
         (item) =>
           !(
             item.product.id === productId &&
-            item.selectedColor.name === colorName &&
-            item.selectedSize === size
+            ((item.selectedColor.name === arg2 && item.selectedSize === arg3) ||
+             (item.selectedSize === arg2 && item.selectedColor.name === arg3))
           )
       )
     );
@@ -104,20 +105,20 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const updateQuantity = (
     productId: string,
-    colorName: string,
-    size: string,
+    arg2: string,
+    arg3: string,
     quantity: number
   ) => {
     if (quantity <= 0) {
-      removeItem(productId, colorName, size);
+      removeItem(productId, arg2, arg3);
       return;
     }
     setItems((prev) =>
       prev.map((item) => {
         if (
           item.product.id === productId &&
-          item.selectedColor.name === colorName &&
-          item.selectedSize === size
+          ((item.selectedColor.name === arg2 && item.selectedSize === arg3) ||
+           (item.selectedSize === arg2 && item.selectedColor.name === arg3))
         ) {
           return { ...item, quantity };
         }
@@ -191,6 +192,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         amountNeededForFreeShipping,
         finalTotal,
         isCartDrawerOpen,
+        isCartOpen: isCartDrawerOpen,
         setIsCartDrawerOpen,
         openCartDrawer,
         closeCartDrawer,

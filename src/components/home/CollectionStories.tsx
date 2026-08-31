@@ -7,10 +7,10 @@ import { MediaPlaceholder } from '@/components/ui/MediaPlaceholder';
 
 export const CollectionStories: React.FC = () => {
   return (
-    <section className="section-spacing select-none overflow-hidden bg-[#F7F7F5]">
+    <section className="pt-2 sm:pt-4 pb-8 sm:pb-12 select-none overflow-hidden bg-[#F7F7F5]">
       <div className="vostra-container">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-8 pb-3 border-b border-black/10">
+        <div className="flex items-center justify-between mb-5 pb-2.5 border-b border-black/10">
           <div className="flex items-center gap-2.5">
             <span className="w-2 h-2 rounded-full bg-[#C65A28]" />
             <h2 className="text-xs sm:text-sm font-mono font-bold tracking-widest uppercase text-[#111315]">
@@ -23,7 +23,11 @@ export const CollectionStories: React.FC = () => {
         </div>
 
         {/* Horizontal Row (Desktop) & Snap Horizontal Scroll (Mobile) */}
-        <div className="flex items-center gap-6 sm:gap-8 lg:gap-10 overflow-x-auto pb-4 pt-2 no-scrollbar scroll-smooth">
+        <div
+          data-lenis-prevent
+          className="flex items-center gap-6 sm:gap-8 lg:gap-10 overflow-x-auto pb-3 pt-1 no-scrollbar scroll-smooth overscroll-x-contain"
+          style={{ scrollBehavior: 'smooth', WebkitOverflowScrolling: 'touch' }}
+        >
           {collectionStoryCircles.map((circle) => (
             <Link
               key={circle.id}

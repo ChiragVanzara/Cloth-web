@@ -1040,15 +1040,16 @@ export const promotionalBanners = [
 ];
 
 export const collectionStoryCircles = [
-  { id: 'cat-new', name: 'NEW DROPS', href: '/new-arrivals', badge: 'HOT', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-men', name: 'MEN', href: '/men', badge: 'DROPS', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-women', name: 'WOMEN', href: '/women', badge: 'NEW', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-streetwear', name: 'STREETWEAR', href: '/collections/streetwear', badge: 'POPULAR', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-essentials', name: 'ESSENTIALS', href: '/collections/essentials', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-denim', name: 'DENIM', href: '/collections/denim', badge: 'SELVEDGE', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-outerwear', name: 'OUTERWEAR', href: '/collections/outerwear', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-accessories', name: 'ACCESSORIES', href: '/shop?category=Accessories', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=400' },
-  { id: 'cat-sale', name: 'ARCHIVE SALE', href: '/shop?sale=true', badge: '-40%', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-tshirts', name: 'T-SHIRTS', href: '/shop?category=T-Shirts', badge: 'POPULAR', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-jeans', name: 'JEANS', href: '/shop?category=Jeans', badge: 'HOT', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1542272604-780c96856592?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-denim-jackets', name: 'DENIM JACKETS', href: '/shop?category=Jackets', badge: 'SELVEDGE', gradient: '#FFFFFF', imageUrl: '/images/product-denim-jacket.png' },
+  { id: 'cat-hoodies', name: 'HOODIES', href: '/shop?category=Hoodies', badge: 'NEW', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-shirts', name: 'SHIRTS', href: '/shop?category=Shirts', badge: 'DROP', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-trousers', name: 'TROUSERS', href: '/shop?category=Trousers', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-knitwear', name: 'SWEATERS & KNITS', href: '/shop?category=Knitwear', badge: 'TRENDING', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-jackets', name: 'JACKETS', href: '/shop?category=Jackets', badge: 'LIMITED', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-coords', name: 'CO-ORDS', href: '/shop?category=Co-Ord Sets', badge: 'NEW', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=400' },
+  { id: 'cat-shorts', name: 'SHORTS', href: '/shop?category=Cargo Pants', badge: 'BESTSELLER', gradient: '#FFFFFF', imageUrl: 'https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&q=80&w=400' },
 ];
 
 export const asymmetricEditorialBlocks = [

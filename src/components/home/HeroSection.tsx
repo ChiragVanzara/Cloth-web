@@ -9,18 +9,18 @@ import { MediaPlaceholder } from '@/components/ui/MediaPlaceholder';
 export const HeroSection: React.FC = () => {
   return (
     <section className="relative w-full pt-2 pb-8 sm:pb-12 select-none bg-[#F7F7F5]">
-      <div className="vostra-container">
-        {/* Main 16:9 / 75vh Hero Container with Real High-Fashion Photography */}
-        <div className="relative rounded-[3px] overflow-hidden border border-black/10 shadow-2xl bg-[#EAEAE4]">
-          <MediaPlaceholder
-            type="hero"
-            aspectRatio="16/9"
-            imageUrl="/images/hero-campaign.png"
-            altText="VOSTRA Autumn/Winter 2026 Tokyo Architecture Fashion Campaign"
-            className="w-full min-h-[520px] sm:min-h-[640px] lg:min-h-[740px]"
-          >
-            {/* Cinematic Editorial Overlay Grid */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 flex flex-col justify-between p-6 sm:p-12 lg:p-16 z-20 pointer-events-auto text-white">
+      {/* Main 16:9 / 75vh Full-Bleed Hero Container with Real High-Fashion Photography */}
+      <div className="relative w-full overflow-hidden border-y border-black/10 shadow-2xl bg-[#EAEAE4]">
+        <MediaPlaceholder
+          type="hero"
+          aspectRatio="16/9"
+          imageUrl="/images/hero-campaign.png"
+          altText="VOSTRA Autumn/Winter 2026 Tokyo Architecture Fashion Campaign"
+          className="w-full !rounded-none !border-x-0 min-h-[520px] sm:min-h-[640px] lg:min-h-[740px]"
+        >
+          {/* Cinematic Editorial Overlay Grid */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/20 flex flex-col justify-between p-6 sm:p-12 lg:p-16 z-20 pointer-events-auto text-white">
+            <div className="w-full max-w-[1440px] mx-auto h-full flex flex-col justify-between">
               
               {/* TOP HERO META STRIP */}
               <div className="flex items-center justify-between">
@@ -51,7 +51,7 @@ export const HeroSection: React.FC = () => {
                 </div>
 
                 {/* Dramatic Hero Headline with Syne Luxury Font */}
-                <h1 className="hero-headline max-w-3xl drop-shadow-2xl text-white">
+                <h1 className="hero-headline max-w-3xl !text-white drop-shadow-[0_4px_24px_rgba(0,0,0,0.95)]">
                   {heroCampaign.headline}
                 </h1>
 
@@ -97,8 +97,8 @@ export const HeroSection: React.FC = () => {
               </div>
 
             </div>
-          </MediaPlaceholder>
-        </div>
+          </div>
+        </MediaPlaceholder>
       </div>
     </section>
   );

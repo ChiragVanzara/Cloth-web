@@ -150,7 +150,8 @@ button {
   line-height: 0.88;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  color: var(--text-primary);
+  color: #FFFFFF;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.75);
 }
 
 .display-xl {

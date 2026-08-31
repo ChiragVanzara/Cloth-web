@@ -76,8 +76,9 @@ export interface FilterState {
   priceRange: [number, number];
   outfitCategory: string[];
   collection: string[];
-  inStockOnly: boolean;
+  inStockOnly?: boolean;
   onSaleOnly: boolean;
+  newDropsOnly?: boolean;
 }
 
 export type SortOption =
