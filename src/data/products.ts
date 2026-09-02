@@ -356,7 +356,7 @@ export const mockProducts: Product[] = [
     slug: 'heavyweight-french-terry-hoodie',
     category: 'Hoodies',
     subCategory: 'Oversized Hoodies',
-    gender: 'unisex',
+    gender: 'men',
     price: 3299,
     compareAtPrice: 4299,
     discountPercent: 23,
@@ -385,11 +385,11 @@ export const mockProducts: Product[] = [
     ],
     careInstructions: ['Machine wash cold inside out', 'Do not tumble dry', 'Hang dry in shade'],
     placeholderGradient: 'linear-gradient(135deg, #111315 0%, #1B1F22 60%, #EAEAE4 100%)',
-    imageUrl: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=800',
-    hoverImageUrl: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/products/men/hoodie/hoodie-01.jpg',
+    hoverImageUrl: '/images/products/men/hoodie/hoodie-02.jpg',
     images: [
-      'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&q=80&w=800',
+      '/images/products/men/hoodie/hoodie-01.jpg',
+      '/images/products/men/hoodie/hoodie-02.jpg',
     ]
   },
   {
@@ -794,12 +794,13 @@ export const mockProducts: Product[] = [
     ],
     careInstructions: ['Wash cold inside out', 'Hang dry'],
     placeholderGradient: 'linear-gradient(135deg, #686C72 0%, #182A3A 60%, #111315 100%)',
-    imageUrl: 'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=800',
-    hoverImageUrl: 'https://images.unsplash.com/photo-1550246140-5119ae4790b8?auto=format&fit=crop&q=80&w=800',
+    imageUrl: '/images/products/men/jeans/jeans-straight-blue.jpg',
+    hoverImageUrl: '/images/products/men/jeans/jeans-straight-black.jpg',
     images: [
-      'https://images.unsplash.com/photo-1582418702059-97ebafb35d09?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1550246140-5119ae4790b8?auto=format&fit=crop&q=80&w=800',
-      'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?auto=format&fit=crop&q=80&w=800',
+      '/images/products/men/jeans/jeans-straight-blue.jpg',
+      '/images/products/men/jeans/jeans-straight-black.jpg',
+      '/images/products/men/jeans/jeans-slim-blue.jpg',
+      '/images/products/men/jeans/jeans-slim-black.jpg',
     ]
   },
   {
@@ -1001,6 +1002,50 @@ export const mockProducts: Product[] = [
     images: [
       'https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=800',
       'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&q=80&w=800',
+    ]
+  },
+  {
+    id: 'prod-025',
+    name: 'CLASSIC WASHED DENIM TRUCKER JACKET',
+    slug: 'classic-washed-denim-trucker-jacket',
+    category: 'Jackets',
+    subCategory: 'Denim Jackets',
+    gender: 'men',
+    price: 3999,
+    compareAtPrice: 5299,
+    discountPercent: 25,
+    rating: 4.9,
+    reviewCount: 88,
+    fit: 'Regular',
+    material: '12oz Rigid Cotton Denim',
+    composition: '100% Cotton Denim',
+    collection: 'Denim',
+    badge: 'NEW DROP',
+    outfitCategory: 'STREET FIT',
+    isTrending: true,
+    isNewArrival: true,
+    colors: [
+      { name: 'Indigo Blue', hex: '#2C3E5C' },
+      { name: 'Jet Black', hex: '#111315' },
+    ],
+    sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+    description: 'A timeless trucker silhouette cut from rigid 12oz cotton denim, finished with a classic point collar, dual chest flap pockets, and antique-brass hardware.',
+    details: [
+      'Classic point collar with button-through front placket',
+      'Dual chest flap pockets with logo-stamped buttons',
+      'Adjustable button cuffs and side waist tabs',
+      'Structured shoulder seam for a clean, tailored drape'
+    ],
+    careInstructions: ['Machine wash cold inside out', 'Do not tumble dry', 'Iron on reverse if needed'],
+    placeholderGradient: 'linear-gradient(135deg, #2C3E5C 0%, #111315 60%, #182A3A 100%)',
+    imageUrl: '/images/products/men/denim-jacket/denim-jacket-blue-01.jpg',
+    hoverImageUrl: '/images/products/men/denim-jacket/denim-jacket-black-01.jpg',
+    images: [
+      '/images/products/men/denim-jacket/denim-jacket-blue-01.jpg',
+      '/images/products/men/denim-jacket/denim-jacket-blue-02.jpg',
+      '/images/products/men/denim-jacket/denim-jacket-blue-03.jpg',
+      '/images/products/men/denim-jacket/denim-jacket-black-01.jpg',
+      '/images/products/men/denim-jacket/denim-jacket-black-02.jpg',
     ]
   }
 ];
