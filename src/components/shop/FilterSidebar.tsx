@@ -2,8 +2,8 @@
 
 import React from 'react';
 import { FilterState } from '@/types';
-import { filterSizes, filterFits, filterColors, allCategories, outfitCategories } from '@/data/categories';
-import { RotateCcw, Check } from 'lucide-react';
+import { filterSizes, filterFits, outfitCategories } from '@/data/categories';
+import { RotateCcw } from 'lucide-react';
 
 interface FilterSidebarProps {
   filters: FilterState;
@@ -26,28 +26,12 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
     onFilterChange({ ...filters, gender: updated });
   };
 
-  const toggleCategory = (cat: string) => {
-    const exists = filters.category.includes(cat);
-    const updated = exists
-      ? filters.category.filter((c) => c !== cat)
-      : [...filters.category, cat];
-    onFilterChange({ ...filters, category: updated });
-  };
-
   const toggleSize = (size: string) => {
     const exists = filters.size.includes(size);
     const updated = exists
       ? filters.size.filter((s) => s !== size)
       : [...filters.size, size];
     onFilterChange({ ...filters, size: updated });
-  };
-
-  const toggleColor = (colorName: string) => {
-    const exists = filters.color.includes(colorName);
-    const updated = exists
-      ? filters.color.filter((c) => c !== colorName)
-      : [...filters.color, colorName];
-    onFilterChange({ ...filters, color: updated });
   };
 
   const toggleFit = (fit: string) => {
@@ -68,9 +52,7 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
 
   const hasActiveFilters =
     filters.gender.length > 0 ||
-    filters.category.length > 0 ||
     filters.size.length > 0 ||
-    filters.color.length > 0 ||
     filters.fit.length > 0 ||
     filters.outfitCategory.length > 0 ||
     filters.onSaleOnly ||
@@ -112,42 +94,13 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
               <button
                 key={g}
                 onClick={() => toggleGender(g)}
-                className={`py-1.5 px-2 text-center text-xs font-mono uppercase tracking-wider rounded-sm border transition-colors ${
-                  isSelected
-                    ? 'bg-[#111315] text-white font-bold border-[#111315]'
-                    : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
-                }`}
+                className={`py-1.5 px-2 text-center text-xs font-mono uppercase tracking-wider rounded-sm border transition-colors ${isSelected
+                  ? 'bg-[#111315] text-white font-bold border-[#111315]'
+                  : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
+                  }`}
               >
                 {g}
               </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Categories */}
-      <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
-          CATEGORY
-        </h4>
-        <div className="space-y-1">
-          {allCategories.map((cat) => {
-            const isSelected = filters.category.includes(cat.id);
-            return (
-              <label
-                key={cat.id}
-                className="flex items-center justify-between py-1 cursor-pointer group text-xs font-secondary hover:text-[#111315]"
-              >
-                <span className={isSelected ? 'text-[#111315] font-bold' : 'text-[#4A4E54]'}>
-                  {cat.name}
-                </span>
-                <input
-                  type="checkbox"
-                  checked={isSelected}
-                  onChange={() => toggleCategory(cat.id)}
-                  className="accent-[#111315] rounded-sm cursor-pointer"
-                />
-              </label>
             );
           })}
         </div>
@@ -165,43 +118,12 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
               <button
                 key={size}
                 onClick={() => toggleSize(size)}
-                className={`py-1.5 text-center text-xs font-mono rounded-sm border transition-colors ${
-                  isSelected
-                    ? 'bg-[#111315] text-white font-bold border-[#111315]'
-                    : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
-                }`}
+                className={`py-1.5 text-center text-xs font-mono rounded-sm border transition-colors ${isSelected
+                  ? 'bg-[#111315] text-white font-bold border-[#111315]'
+                  : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
+                  }`}
               >
                 {size}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Colors */}
-      <div className="space-y-2">
-        <h4 className="text-[11px] font-mono font-bold tracking-wider uppercase text-[#757A82]">
-          COLOR
-        </h4>
-        <div className="flex flex-wrap gap-2">
-          {filterColors.map((color) => {
-            const isSelected = filters.color.includes(color.name);
-            return (
-              <button
-                key={color.name}
-                onClick={() => toggleColor(color.name)}
-                className={`w-6 h-6 rounded-full border transition-all flex items-center justify-center ${
-                  isSelected
-                    ? 'border-[#111315] ring-2 ring-black/20 scale-110'
-                    : 'border-black/20 hover:scale-105'
-                }`}
-                style={{ backgroundColor: color.hex }}
-                title={color.name}
-                aria-label={`Color: ${color.name}`}
-              >
-                {isSelected && (
-                  <Check className="w-3 h-3 text-white drop-shadow-sm" />
-                )}
               </button>
             );
           })}
@@ -220,11 +142,10 @@ export const FilterSidebar: React.FC<FilterSidebarProps> = ({
               <button
                 key={fit}
                 onClick={() => toggleFit(fit)}
-                className={`px-2.5 py-1 text-[11px] font-mono rounded-sm border transition-colors ${
-                  isSelected
-                    ? 'bg-[#111315] text-white font-bold border-[#111315]'
-                    : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
-                }`}
+                className={`px-2.5 py-1 text-[11px] font-mono rounded-sm border transition-colors ${isSelected
+                  ? 'bg-[#111315] text-white font-bold border-[#111315]'
+                  : 'bg-white text-[#4A4E54] border-black/10 hover:border-black/30'
+                  }`}
               >
                 {fit}
               </button>
